@@ -1,0 +1,38 @@
+﻿@{
+    ViewData["Title"] = "Payment Verification";
+}
+
+<h2>Payment Verification</h2>
+
+@if (ViewBag.Message != null)
+{
+    <p style="color: red;">@ViewBag.Message</p>
+}
+
+@if (ViewBag.Error != null)
+{
+    <p style="color: red;">@ViewBag.Error</p>
+}
+
+@if (ViewBag.SuccessMessage != null)
+{
+    <p style="color: green;">@ViewBag.SuccessMessage</p>
+}
+
+<div>
+    <h3>Payment Status</h3>
+    <p>Transaction Reference: @ViewBag.TxRef</p>
+    <p>Payment Status: @ViewBag.Status</p>
+</div>
+
+@if (ViewBag.DownloadReceiptUrl != null)
+{
+    <div>
+        <h3>Download Receipt</h3>
+        <a href="@ViewBag.DownloadReceiptUrl" class="btn btn-primary">Download Receipt</a>
+    </div>
+}
+
+<div>
+    <button onclick="window.location.href='@Url.Action("MyOrders", "Orders")'">Go to My Orders</button>
+</div>

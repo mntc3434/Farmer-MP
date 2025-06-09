@@ -1,0 +1,49 @@
+﻿@model List<Farmer_MP.Models.User>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Manage Users";
+}
+
+<h2 class="mt-4"><i class="fas fa-users"></i> Manage Users</h2>
+
+<table class="table table-bordered mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>User ID</th>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserID</td>
+                <td>@user.Name</td>
+                <td>@user.UserType</td>
+                <td>
+                    @if (user.IsEmailVerified)
+                    {
+                        <span class="badge bg-success">Active</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">Inactive</span>
+                    }
+                </td>
+                <td>
+                    <a asp-action="EditUser" asp-route-id="@user.UserID" class="btn btn-warning btn-sm">Edit</a>
+                    <form asp-action="SuspendUser" asp-route-id="@user.UserID" method="post" style="display:inline;">
+                        @Html.AntiForgeryToken()
+                        <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Are you sure you want to suspend this user?');">Suspend</button>
+                    </form>
+
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>

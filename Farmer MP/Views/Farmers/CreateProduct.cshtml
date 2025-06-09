@@ -1,0 +1,57 @@
+﻿@model Farmer_MP.Models.Product
+
+@{
+    ViewData["Title"] = "Create Product";
+}
+
+<h2>Create Product</h2>
+
+<form asp-action="Create" method="post" enctype="multipart/form-data">
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control" required />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Description" class="control-label"></label>
+        <textarea asp-for="Description" class="form-control"></textarea>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Price" class="control-label"></label>
+        <input asp-for="Price" class="form-control" type="number" step="0.01" required />
+        <span asp-validation-for="Price" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Category" class="control-label"></label>
+        <input asp-for="Category" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Availability" class="control-label"></label>
+        <select asp-for="Availability" class="form-control">
+            <option value="true">Available</option>
+            <option value="false">Not Available</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label>Upload Product Images</label>
+        <input type="file" name="images" class="form-control" multiple />
+    </div>
+
+    <input type="hidden" asp-for="UserID" value="@ViewBag.FarmerID" />
+
+    <div class="form-group mt-3">
+        <button type="submit" class="btn btn-primary">Create</button>
+        <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+    </div>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

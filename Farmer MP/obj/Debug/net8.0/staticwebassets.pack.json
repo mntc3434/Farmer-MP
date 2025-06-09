@@ -1,0 +1,417 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Farmer MP.bundle.scp.css",
+      "PackagePath": "staticwebassets\\Farmer MP.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\css\\FarmerDashboard.css",
+      "PackagePath": "staticwebassets\\css\\FarmerDashboard.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\css\\account.css",
+      "PackagePath": "staticwebassets\\css\\account.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\css\\cart.css",
+      "PackagePath": "staticwebassets\\css\\cart.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\css\\message.css",
+      "PackagePath": "staticwebassets\\css\\message.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\css\\order.css",
+      "PackagePath": "staticwebassets\\css\\order.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\css\\payment.css",
+      "PackagePath": "staticwebassets\\css\\payment.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\css\\product.css",
+      "PackagePath": "staticwebassets\\css\\product.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\images\\Fruit.jpg",
+      "PackagePath": "staticwebassets\\images\\Fruit.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\images\\agriculturebg.jpg",
+      "PackagePath": "staticwebassets\\images\\agriculturebg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\images\\alogin.png",
+      "PackagePath": "staticwebassets\\images\\alogin.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\images\\cart-bg.jpg",
+      "PackagePath": "staticwebassets\\images\\cart-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\images\\cart-bg1.jpg",
+      "PackagePath": "staticwebassets\\images\\cart-bg1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\images\\contactus2.jpg",
+      "PackagePath": "staticwebassets\\images\\contactus2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\images\\dairy.jpg",
+      "PackagePath": "staticwebassets\\images\\dairy.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\images\\hero1.jpg",
+      "PackagePath": "staticwebassets\\images\\hero1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\images\\hero11.jpg",
+      "PackagePath": "staticwebassets\\images\\hero11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\images\\hero2.jpg",
+      "PackagePath": "staticwebassets\\images\\hero2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\images\\hero3.png",
+      "PackagePath": "staticwebassets\\images\\hero3.png"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\images\\vegetables.jpg",
+      "PackagePath": "staticwebassets\\images\\vegetables.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\js\\message.js",
+      "PackagePath": "staticwebassets\\js\\message.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\uploads\\1379e0b3-33a9-4793-9703-35bb57c5064b.jfif",
+      "PackagePath": "staticwebassets\\uploads\\1379e0b3-33a9-4793-9703-35bb57c5064b.jfif"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\uploads\\20250328_173204_cl2pfuem.3f3.jpg",
+      "PackagePath": "staticwebassets\\uploads\\20250328_173204_cl2pfuem.3f3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\uploads\\20250328_180006_hmjqgqyc.2y0.jpg",
+      "PackagePath": "staticwebassets\\uploads\\20250328_180006_hmjqgqyc.2y0.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\uploads\\20250328_180155_knynektc.f3t.jpg",
+      "PackagePath": "staticwebassets\\uploads\\20250328_180155_knynektc.f3t.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\uploads\\20250328_180213_znx1kuyt.cyf.jpg",
+      "PackagePath": "staticwebassets\\uploads\\20250328_180213_znx1kuyt.cyf.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\uploads\\3224a81b-e236-4911-88ec-6d553a44d13a.jpg",
+      "PackagePath": "staticwebassets\\uploads\\3224a81b-e236-4911-88ec-6d553a44d13a.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\uploads\\870e8e77-b6bd-4a60-92eb-72ef314c080d.jfif",
+      "PackagePath": "staticwebassets\\uploads\\870e8e77-b6bd-4a60-92eb-72ef314c080d.jfif"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\uploads\\Fruit_rgdfxtbm.zg5.jpg",
+      "PackagePath": "staticwebassets\\uploads\\Fruit_rgdfxtbm.zg5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\uploads\\Harnessing_wi3hoixx.1nn.jpg",
+      "PackagePath": "staticwebassets\\uploads\\Harnessing_wi3hoixx.1nn.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\uploads\\The-Tom-and-Jerry-Show_1jlfyafo.3de.jpg",
+      "PackagePath": "staticwebassets\\uploads\\The-Tom-and-Jerry-Show_1jlfyafo.3de.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\uploads\\The-Tom-and-Jerry-Show_f14grqz0.moq.jpg",
+      "PackagePath": "staticwebassets\\uploads\\The-Tom-and-Jerry-Show_f14grqz0.moq.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\uploads\\The-Tom-and-Jerry-Show_sp5hughj.gvo.jpg",
+      "PackagePath": "staticwebassets\\uploads\\The-Tom-and-Jerry-Show_sp5hughj.gvo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\uploads\\c50e2d14-8b03-4a2f-b584-0921afecc548.jpg",
+      "PackagePath": "staticwebassets\\uploads\\c50e2d14-8b03-4a2f-b584-0921afecc548.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\uploads\\minte_qd01kyyl.2gx.jpg",
+      "PackagePath": "staticwebassets\\uploads\\minte_qd01kyyl.2gx.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\uploads\\photo_2025-03-26_10-18-23_iwjuudl0.zyh.jpg",
+      "PackagePath": "staticwebassets\\uploads\\photo_2025-03-26_10-18-23_iwjuudl0.zyh.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\uploads\\potato_z44ogmqz.l0a.jfif",
+      "PackagePath": "staticwebassets\\uploads\\potato_z44ogmqz.l0a.jfif"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\uploads\\smartphone3_txgjyyy0.bt5.jpg",
+      "PackagePath": "staticwebassets\\uploads\\smartphone3_txgjyyy0.bt5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\wwwroot\\uploads\\vegetables_o1tqnv1n.14u.jpg",
+      "PackagePath": "staticwebassets\\uploads\\vegetables_o1tqnv1n.14u.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Farmer MP.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Farmer MP.props",
+      "PackagePath": "build\\Farmer MP.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Farmer MP.props",
+      "PackagePath": "buildMultiTargeting\\Farmer MP.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Farmer MP.props",
+      "PackagePath": "buildTransitive\\Farmer MP.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

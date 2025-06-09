@@ -1,0 +1,45 @@
+﻿@model Farmer_MP.Models.Product
+
+@{
+    Layout = "farmerPan"; // Adjust layout if necessary
+}
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="product-images mb-4">
+                <h4 class="text-primary">Product Images</h4>
+                @foreach (var image in Model.Images)
+                {
+                    <img src="@image.ImageUrl" class="img-fluid rounded mb-3" alt="Product Image" />
+                }
+            </div>
+        </div>
+
+        <div class="col-lg-6">
+            <h1 class="text-dark font-weight-bold">@Model.Name</h1>
+            <p class="text-muted">@Model.Description</p>
+            <p class="font-weight-bold text-success">Price: $@Model.Price</p>
+            <p><strong>Posted by:</strong> User @Model.UserID</p>
+
+            <div class="d-flex justify-content-between mt-4">
+                <a href="@Url.Action("Edit", "Product", new { id = Model.ProductID })" class="btn btn-primary text-white px-5 py-3 rounded-3">Edit Product</a>
+                <a href="@Url.Action("Index", "Product")" class="btn btn-secondary text-white px-5 py-3 rounded-3">Back to List</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .btn {
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #0056b3;
+    }
+
+    .product-images img {
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+</style>

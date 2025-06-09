@@ -1,0 +1,97 @@
+﻿@model Farmer_MP.ViewModel.ProfileViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 50px;
+        }
+
+        h2 {
+            color: #264065;
+            margin-bottom: 30px;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-weight: 600;
+            color: #333;
+            font-size: 16px;
+        }
+
+        input[type="text"], input[type="email"] {
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            padding: 10px;
+            font-size: 14px;
+            width: 100%;
+            margin-top: 5px;
+        }
+
+        .btn-primary {
+            background-color: #264065;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            width: 100%;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            background-color: #4f9f8d;
+        }
+
+        .form-group input:focus {
+            border-color: #4f9f8d;
+            outline: none;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Your Profile</h2>
+
+        <form method="post" asp-action="Settings">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="Name" value="@Model.Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" name="Email" value="@Model.Email" required>
+            </div>
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="text" class="form-control" id="phone" name="Phone" value="@Model.Phone" required>
+            </div>
+            <button type="submit" class="btn btn-primary">Update Profile</button>
+        </form>
+    </div>
+
+</body>
+</html>

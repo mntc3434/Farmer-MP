@@ -1,0 +1,202 @@
+﻿@model Farmer_MP.ViewModel.LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>AgroMarket - Login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+        /* [Previous styles remain the same] */
+        .validation-summary-errors ul {
+            padding-left: 0;
+            list-style: none;
+            margin-bottom: 1rem;
+        }
+
+        .field-validation-error {
+            color: #dc3545;
+            font-size: 0.875rem;
+        }
+
+        body {
+            background-color: #f9f9f9;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .login-container {
+            min-height: 100vh;
+        }
+
+        .left-section {
+            padding: 60px;
+            background-color: #ffffff;
+        }
+
+        .brand {
+            color: #4CAF50;
+            font-weight: 700;
+            font-size: 24px;
+        }
+
+        .headline {
+            color: #4CAF50;
+            font-weight: 600;
+            font-size: 20px;
+        }
+
+        .form-control {
+            border-radius: 6px;
+            height: 45px;
+        }
+
+        .btn-primary {
+            background-color: #4CAF50;
+            border: none;
+        }
+
+        .btn-outline-primary {
+            border-color: #4CAF50;
+            color: #4CAF50;
+        }
+
+            .btn-outline-primary:hover {
+                background-color: #4CAF50;
+                color: white;
+            }
+
+        .social-login a {
+            margin-right: 15px;
+            color: #4CAF50;
+            font-weight: 500;
+            text-decoration: none;
+        }
+
+        .right-section {
+            background-color: #f0fdf4;
+            padding: 60px 40px;
+            text-align: center;
+        }
+
+            .right-section img {
+                max-height: 300px;
+                margin-bottom: 20px;
+            }
+
+            .right-section h3 {
+                color: #4CAF50;
+                font-weight: bold;
+            }
+
+            .right-section p {
+                color: #555;
+                font-size: 16px;
+                line-height: 1.6;
+                max-width: 400px;
+                margin: 0 auto;
+            }
+
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <partial name="_Navbar" />
+    <div class="container-fluid login-container d-flex">
+        <!-- Left: Login Form -->
+        <div class="col-md-6 d-flex flex-column justify-content-center left-section">
+            <div>
+                <div class="brand mb-3">AgroMarket</div>
+                <div class="headline mb-2">Empowering Farmers, Connecting Markets</div>
+                <p class="text-muted mb-4">Welcome back! Please log in to continue.</p>
+
+                @if (TempData["SuccessMessage"] != null)
+                {
+                    <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+                }
+
+                <form asp-action="Login" method="post">
+                    
+                    
+                    @if (TempData["UnverifiedEmail"] != null)
+                    {
+                        <div class="alert alert-warning">
+                            <p>Please verify your email first.</p>
+                            <a href="@Url.Action("ResendOTP", "Account", new { email = TempData["UnverifiedEmail"] })"
+                               class="btn btn-sm btn-outline-primary">
+                                Resend Verification Email
+                            </a>
+                        </div>
+                    }
+
+                    <input type="hidden" name="returnUrl" value="@ViewData["ReturnUrl"]" />
+
+                    <div class="mb-3">
+                        <label asp-for="Email" class="form-label">Email Address</label>
+                        <input asp-for="Email" class="form-control" placeholder="you@example.com" />
+                        <span asp-validation-for="Email" class="text-danger small"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Password" class="form-label">Password</label>
+                        <input asp-for="Password" type="password" class="form-control" placeholder="Password" />
+                        <span asp-validation-for="Password" class="text-danger small"></span>
+                    </div>
+
+                    <div class="d-flex justify-content-between mb-3">
+                        <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="rememberMe" />
+                            <label class="form-check-label" for="rememberMe">Remember Me</label>
+                        </div>
+                        <a href="/Account/ForgotPassword" class="text-decoration-none">Forgot Password?</a>
+                    </div>
+
+                    <div class="d-flex gap-2 mb-3">
+                        <button type="submit" class="btn btn-primary w-50">Login</button>
+                        <a href="/Account/Register" class="btn btn-outline-primary w-50">Sign Up</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <!-- Right: Image and Website Info -->
+        <div class="col-md-6 d-none d-md-flex flex-column justify-content-center align-items-center right-section">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909762.png" alt="Farming Illustration" />
+            <h3>Welcome to AgroMarket</h3>
+            <p>
+                AgroMarket is a digital marketplace that connects farmers directly with buyers.
+                Sell your products, grow your business, and reach new customers without middlemen.
+                Join us in building a better future for agriculture.
+            </p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Clear any existing session data
+        sessionStorage.clear();
+        localStorage.clear();
+
+        // Prevent form resubmission
+        if (window.history.replaceState) {
+            window.history.replaceState(null, null, window.location.href);
+        }
+    </script>
+</body>
+</html>

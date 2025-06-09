@@ -1,0 +1,127 @@
+﻿@model Farmer_MP.ViewModel.FarmerNotificationsViewModel
+@{
+    ViewData["Title"] = "Notifications";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/FarmerDashboard.css" asp-append-version="true" />
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <div class="col-md-2 bg-dark text-white sidebar p-4">
+            <h3 class="text-center mb-4">Farmer Panel</h3>
+            <hr class="text-white" />
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="@Url.Action("FarmerDashboard", "Farmers")">🏠 Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="@Url.Action("Index", "Product")">📦 Manage Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white active" href="@Url.Action("Notifications", "Farmers")">🔔 Notifications (@Model.NewNotificationsCount)</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="@Url.Action("Index", "Message")">📩 Messages (@Model.NewMessagesCount)</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="@Url.Action("Profile", "Farmers")">👤 Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="@Url.Action("Logout", "Farmers")">🚪 Logout</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Content -->
+        <div class="col-md-9 p-4">
+            <h2 class="mb-4">🔔 Notifications</h2>
+
+            <!-- Status Messages -->
+            @if (TempData["Message"] != null)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    @TempData["Message"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+            @if (TempData["Error"] != null)
+            {
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    @TempData["Error"]
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            }
+
+            @if (Model.Notifications != null && Model.Notifications.Any())
+            {
+                <div class="list-group">
+                    @foreach (var notification in Model.Notifications)
+                    {
+                        <div class="list-group-item mb-3">
+                            <div class="d-flex w-100 justify-content-between">
+                                <h5 class="mb-1">@notification.Title</h5>
+                                <small>@notification.Date.ToString("MMM dd, yyyy hh:mm tt")</small>
+                            </div>
+                            <p class="mb-1">Buyer: @notification.BuyerName</p>
+                            <p class="mb-1">Product: @notification.ProductName</p>
+                            <p class="mb-1">Quantity: @notification.Quantity</p>
+                            <p class="mb-1">Total: @notification.TotalPrice Birr</p>
+
+                            <div class="d-flex align-items-center mt-3">
+                                @{
+                                    var statusClass = notification.CurrentStatus switch
+                                    {
+                                        "Pending" => "bg-warning",
+                                        "Confirmed" => "bg-info",
+                                        "Shipped" => "bg-primary",
+                                        _ => "bg-secondary"
+                                    };
+                                }
+                                <span class="badge @statusClass me-2">Status: @notification.CurrentStatus</span>
+
+                                <!-- Status Change Buttons -->
+                                @if (notification.CurrentStatus == "Pending" || notification.CurrentStatus == "Confirmed")
+                                {
+                                    <form method="post" asp-action="UpdateOrderStatus" class="me-2">
+                                        <input type="hidden" name="orderId" value="@notification.OrderId" />
+                                        <input type="hidden" name="status" value="Shipped" />
+                                        <button type="submit" class="btn btn-sm btn-primary">
+                                            <i class="fas fa-truck"></i> Mark as Shipped
+                                        </button>
+                                    </form>
+                                }
+
+                                @if (notification.CurrentStatus == "Shipped")
+                                {
+                                    <form method="post" asp-action="UpdateOrderStatus">
+                                        <input type="hidden" name="orderId" value="@notification.OrderId" />
+                                        <input type="hidden" name="status" value="Delivered" />
+                                        <button type="submit" class="btn btn-sm btn-success">
+                                            <i class="fas fa-check-circle"></i> Mark as Delivered
+                                        </button>
+                                    </form>
+                                }
+                            </div>
+                        </div>
+                    }
+                </div>
+            }
+            else
+            {
+                <div class="alert alert-info shadow-sm" role="alert">
+                    No new notifications at the moment.
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,0 +1,197 @@
+﻿@model Farmer_MP.ViewModels.MessageViewModel
+@inject IHttpContextAccessor HttpContextAccessor
+
+<head>
+    <link rel="stylesheet" href="~/css/message.css" asp-append-version="true" />
+</head>
+<!-- Navigation Bar -->
+<div class="navigation-bar">
+    <ul>
+        @{
+            string userType = HttpContextAccessor.HttpContext.Session.GetString("UserType"); // Or use User.Identity if using Identity
+            string dashboardUrl = "#"; // Default fallback
+            if (userType == "Admin")
+            {
+                dashboardUrl = Url.Action("AdminDashboard", "Admin");
+            }
+            else if (userType == "Farmer")
+            {
+                dashboardUrl = Url.Action("FarmerDashboard", "Farmers");
+            }
+            else if (userType == "Buyer")
+            {
+                dashboardUrl = Url.Action("BuyerDashboard", "Buyer");
+            }
+        }
+        <li class="nav-item">
+            <a class="nav-link text-white" href="@dashboardUrl">🏠 Dashboard</a>
+        </li>
+
+        <li class="nav-item">
+            <a class="nav-link text-white" href="@Url.Action("Index", "Message")">💬 Messages</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" href="@Url.Action("Logout", "Farmers")">🚪 Logout</a>
+        </li>
+        <!-- Search bar in the navigation -->
+        <li class="nav-item search-item">
+            <input type="text" id="messageSearch" placeholder="Search messages or users..." class="search-input" oninput="searchMessages()">
+        </li>
+    </ul>
+</div>
+
+<!-- Main Container -->
+<div class="messages-container">
+    <!-- Sidebar for Contacts -->
+    <div class="sidebar">
+        <h3>Contacts</h3>
+        <ul class="user-list">
+            @foreach (var contact in Model.Contacts)
+            {
+                var isActive = (Model.CurrentUserType == "Buyer" && contact.UserID == Model.FarmerID) ||
+                (Model.CurrentUserType == "Farmer" && contact.UserID == Model.BuyerID);
+
+                <li class="user-item @(isActive ? "active" : "")"
+                    onclick="showMessages(@contact.UserID)">
+                    <span class="user-name">@contact.UserName (@contact.UserType)</span>
+                  
+                </li>
+            }
+        </ul>
+    </div>
+
+    <!-- Chat Box -->
+    <div class="chat-box">
+        <h2>
+            Messages with
+            <span id="receiver-name">
+                @if (Model.ReceiverOptions != null && Model.NewMessage != null && Model.NewMessage.ReceiverID != 0)
+                {
+                    var receiver = Model.ReceiverOptions.FirstOrDefault(u => u.UserID == Model.NewMessage.ReceiverID);
+                    if (receiver != null)
+                    {
+                        @receiver.Name
+                    }
+                    else
+                    {
+                        @:Select a User
+                    }
+                }
+                else
+                {
+                    @:Select a User
+                }
+            </span>
+        </h2>
+
+        <!-- Display Messages -->
+        <div id="messages-container" class="messages">
+           @foreach (var message in Model.Messages)
+{
+    bool isSender = message.SenderID == Context.Session.GetInt32("UserID");
+
+    <div class="message @(isSender ? "sender" : "receiver")" id="message-@message.MessageID">
+        <div class="message-header">
+            <strong>@message.Sender.Name</strong>
+            <small class="timestamp">@message.Timestamp.ToString("g")</small>
+        </div>
+
+        <div class="message-body">
+            @if (isSender)
+            {
+                <!-- Edit Mode: When editing -->
+                <div id="edit-container-@message.MessageID" class="edit-container" style="display:none;">
+                    <form asp-action="EditMessage" method="post" style="display:inline;">
+                        <input type="hidden" name="MessageID" value="@message.MessageID" />
+                        <textarea name="Content" class="edit-input" required>@message.Content</textarea>
+                        <button type="submit" title="Save Changes" class="action-btn save-btn">💾</button>
+                    </form>
+                </div>
+
+                <!-- Normal Mode: Display message with Edit and Delete options -->
+                <div id="normal-container-@message.MessageID" class="normal-container">
+                    <p id="message-content-@message.MessageID">@message.Content</p>
+                    <div class="message-actions">
+                        <!-- Edit Button (visible only for the sender) -->
+                        <button type="button" class="action-btn edit-btn" onclick="toggleEdit(@message.MessageID)">✏️</button>
+
+                        <!-- Delete Form -->
+                        <form asp-action="DeleteMessage" method="post" style="display:inline;">
+                            <input type="hidden" name="messageId" value="@message.MessageID" />
+                            <button type="submit" title="Delete" class="action-btn delete-btn">🗑️</button>
+                        </form>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <!-- Receiver message -->
+                <p>@message.Content</p>
+            }
+        </div>
+    </div>
+}
+
+
+
+        </div>
+
+        <!-- Send Message Form -->
+        <div class="message-input-container">
+            <form asp-action="SendMessage" method="post">
+                <input type="hidden" name="NewMessage.ReceiverID" value="@Model.NewMessage.ReceiverID" />
+                <div class="message-input">
+                    <textarea asp-for="NewMessage.Content" placeholder="Write your message..." rows="2"></textarea>
+                </div>
+                <button type="submit" class="send-btn">Send</button>
+            </form>
+        </div>
+    </div>
+</div>
+<script>
+    function searchMessages() {
+        let searchQuery = document.getElementById("messageSearch").value.toLowerCase();
+        let users = document.querySelectorAll(".user-item");
+        users.forEach(user => {
+            let name = user.innerText.toLowerCase();
+            user.style.display = name.includes(searchQuery) ? "block" : "none";
+        });
+    }
+    function showMessages(userId) {
+        const currentUserId = @Context.Session.GetInt32("UserID");
+        const currentUserType = "@Context.Session.GetString("UserType")";
+        const productId = @Model.ProductID;
+
+        let buyerId, farmerId;
+
+        if (currentUserType === "Buyer") {
+            buyerId = currentUserId;
+            farmerId = userId;
+        } else {
+            buyerId = userId;
+            farmerId = currentUserId;
+        }
+
+        window.location.href = `/Message/Index?buyerId=${buyerId}&farmerId=${farmerId}&productId=${productId}`;
+    }
+    function showEditForm(messageId) {
+        document.getElementById(`edit-form-${messageId}`).style.display = "block";
+    }
+
+    function hideEditForm(messageId) {
+        document.getElementById(`edit-form-${messageId}`).style.display = "none";
+    }
+
+    function toggleEdit(messageId) {
+        var editContainer = document.getElementById("edit-container-" + messageId);
+        var normalContainer = document.getElementById("normal-container-" + messageId);
+
+        if (editContainer.style.display === "none") {
+            editContainer.style.display = "block";
+            normalContainer.style.display = "none";
+        } else {
+            editContainer.style.display = "none";
+            normalContainer.style.display = "block";
+        }
+    }
+</script>

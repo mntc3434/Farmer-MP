@@ -1,0 +1,35 @@
+﻿@model Farmer_MP.ViewModel.CheckoutViewModel
+
+<div class="checkout-summary">
+    <h1>Checkout</h1>
+    <h3>Your Cart Summary</h3>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.CartItems)
+            {
+                <tr>
+                    <td>@item.Product.Name</td>
+                    <td>@item.Product.Price.ToString("C")</td>
+                    <td>@item.Quantity</td>
+                    <td>@item.TotalPrice.ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <h4>Total Price: @Model.TotalPrice.ToString("C")</h4>
+
+    <form method="post" action="@Url.Action("ProcessPayment", "Buyer")">
+        <input type="hidden" name="buyerId" value="@Model.BuyerID" />
+        <input type="hidden" name="totalPrice" value="@Model.TotalPrice" />
+        <button type="submit" class="btn btn-primary">Confirm Payment</button>
+    </form>
+</div>

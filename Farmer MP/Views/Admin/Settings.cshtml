@@ -1,0 +1,67 @@
+﻿@model Farmer_MP.Models.AdminSettingsViewModel
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Admin Settings";
+}
+
+<h2 class="mt-4"><i class="fas fa-user-cog"></i> Admin Profile Settings</h2>
+
+@if (TempData["Success"] != null)
+{
+    <div class="alert alert-success">@TempData["Success"]</div>
+}
+
+<form asp-action="Settings" method="post" class="mt-4">
+    @Html.AntiForgeryToken()
+    <input type="hidden" asp-for="UserID" />
+
+    <div class="mb-3">
+        <label asp-for="Name" class="form-label"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Phone" class="form-label"></label>
+        <input asp-for="Phone" class="form-control" />
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="Address" class="form-label"></label>
+        <input asp-for="Address" class="form-control" />
+    </div>
+
+    <hr />
+    <h4 class="mt-4">Change Password (optional)</h4>
+
+    <div class="mb-3">
+        <label asp-for="CurrentPassword" class="form-label"></label>
+        <input asp-for="CurrentPassword" class="form-control" />
+        <span asp-validation-for="CurrentPassword" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="NewPassword" class="form-label"></label>
+        <input asp-for="NewPassword" class="form-control" />
+        <span asp-validation-for="NewPassword" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="ConfirmNewPassword" class="form-label"></label>
+        <input asp-for="ConfirmNewPassword" class="form-control" />
+        <span asp-validation-for="ConfirmNewPassword" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Save Changes</button>
+</form>
+
+@section Scripts {
+    @Html.Partial("_ValidationScriptsPartial")
+}

@@ -1,0 +1,55 @@
+﻿<!-- Views/Shared/_Footer.cshtml -->
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+</head>
+<footer class="bg-dark text-white py-5 mt-auto">
+    <div class="container">
+        <div class="row">
+            <!-- About Section -->
+            <div class="col-md-4">
+                <h5>About Farmer's Market</h5>
+                <p>We connect farmers directly to customers, ensuring fresh and organic produce reaches your table.</p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-2">
+                <h5>Company</h5>
+                <ul class="list-unstyled">
+                    <li><a href="@Url.Action("About", "Home")" class="text-white">About Us</a></li>
+                    <li><a href="#" class="text-white">Careers</a></li>
+                    <li><a href="#" class="text-white">Policies</a></li>
+                    <li><a href="#" class="text-white">Testimonials</a></li>
+                </ul>
+            </div>
+
+            <!-- Help & Support -->
+            <div class="col-md-2">
+                <h5>Support</h5>
+                <ul class="list-unstyled">
+                    <li><a href="@Url.Action("Contact", "Home")" class="text-white">FAQs</a></li>
+                    <li><a href="#" class="text-white">Help Center</a></li>
+                    <li><a href="#" class="text-white">Return Policy</a></li>
+                    <li><a href="#" class="text-white">Privacy Policy</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="col-md-4">
+                <h5>Contact Us</h5>
+                <p>Email: mgetu6661@gmail.com</p>
+                <p>Phone: +251962798155</p>
+                <p>Address:  Farm Lane, Ziway, Ethiopia</p>
+                <h6>Stay Updated</h6>
+                <input type="email" class="form-control" placeholder="Enter your email">
+                <button class="btn btn-success mt-2">Subscribe</button>
+            </div>
+        </div>
+        <hr class="mt-4">
+        <p class="text-center">&copy; 2025 Farmer's Market | All Rights Reserved</p>
+    </div>
+</footer>

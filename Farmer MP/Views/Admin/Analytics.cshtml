@@ -1,0 +1,83 @@
+﻿@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Analytics";
+}
+
+@section Scripts {
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        // Monthly Users Chart
+        const usersCtx = document.getElementById('usersChart').getContext('2d');
+        new Chart(usersCtx, {
+            type: 'line',
+            data: {
+                labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+                datasets: [{
+                    label: 'Users',
+                    data: [120, 190, 300, 250, 420, 480],
+                    fill: true,
+                    backgroundColor: 'rgba(54, 162, 235, 0.2)',
+                    borderColor: 'rgba(54, 162, 235, 1)',
+                    tension: 0.4
+                }]
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: true }
+                }
+            }
+        });
+
+        // Product Performance Chart
+        const productCtx = document.getElementById('productChart').getContext('2d');
+        new Chart(productCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Product A', 'Product B', 'Product C', 'Product D'],
+                datasets: [{
+                    label: 'Sales',
+                    data: [300, 500, 100, 400],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(75, 192, 192, 0.6)',
+                        'rgba(255, 206, 86, 0.6)',
+                        'rgba(153, 102, 255, 0.6)'
+                    ],
+                    borderColor: [
+                        'rgba(255, 99, 132, 1)',
+                        'rgba(75, 192, 192, 1)',
+                        'rgba(255, 206, 86, 1)',
+                        'rgba(153, 102, 255, 1)'
+                    ],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                responsive: true,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+}
+
+<h2 class="mt-4"><i class="fas fa-chart-line"></i> Analytics Overview</h2>
+
+<div class="row mt-3">
+    <div class="col-md-6">
+        <div class="card p-3">
+            <h5>Monthly Users</h5>
+            <canvas id="usersChart" height="250"></canvas>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card p-3">
+            <h5>Product Performance</h5>
+            <canvas id="productChart" height="250"></canvas>
+        </div>
+    </div>
+</div>

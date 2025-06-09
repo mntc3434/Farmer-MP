@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Farmer_MP.Models.Order>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Orders";
+}
+
+<h2 class="mt-4"><i class="fas fa-shopping-cart"></i> Orders</h2>
+
+<table class="table table-bordered mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>Order ID</th>
+            <th>Customer</th>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Total</th>
+            <th>Status</th>
+            <th>Payment</th>
+            <th>Date</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var order in Model)
+        {
+            <tr>
+                <td>#@order.OrderID</td>
+                <td>@order.Buyer?.Name</td>
+                <td>@order.Product?.Name</td>
+                <td>@order.Quantity</td>
+                <td>@order.TotalPrice.ToString("0.00") Birr</td>
+                <td>
+                    @if (order.OrderStatus == "Delivered")
+                    {
+                        <span class="badge bg-success">Delivered</span>
+                    }
+                    else if (order.OrderStatus == "Pending")
+                    {
+                        <span class="badge bg-warning text-dark">Pending</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">@order.OrderStatus</span>
+                    }
+                </td>
+                <td>
+                    @if (order.PaymentStatus == "Paid")
+                    {
+                        <span class="badge bg-primary">Paid</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-danger">Pending</span>
+                    }
+                </td>
+                <td>@order.OrderDate.ToString("dd MMM yyyy")</td>
+            </tr>
+        }
+    </tbody>
+</table>

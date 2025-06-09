@@ -1,0 +1,177 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\User\\source\\repos\\Farmer MP\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{4E6ACF24-69DD-4328-9628-BCCDC101D3A2}|Farmer MP\\Farmer MP.csproj|c:\\users\\user\\source\\repos\\farmer mp\\farmer mp\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4E6ACF24-69DD-4328-9628-BCCDC101D3A2}|Farmer MP\\Farmer MP.csproj|solutionrelative:farmer mp\\views\\home\\about.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E6ACF24-69DD-4328-9628-BCCDC101D3A2}|Farmer MP\\Farmer MP.csproj|c:\\users\\user\\source\\repos\\farmer mp\\farmer mp\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E6ACF24-69DD-4328-9628-BCCDC101D3A2}|Farmer MP\\Farmer MP.csproj|solutionrelative:farmer mp\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E6ACF24-69DD-4328-9628-BCCDC101D3A2}|Farmer MP\\Farmer MP.csproj|c:\\users\\user\\source\\repos\\farmer mp\\farmer mp\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4E6ACF24-69DD-4328-9628-BCCDC101D3A2}|Farmer MP\\Farmer MP.csproj|solutionrelative:farmer mp\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E6ACF24-69DD-4328-9628-BCCDC101D3A2}|Farmer MP\\Farmer MP.csproj|c:\\users\\user\\source\\repos\\farmer mp\\farmer mp\\viewmodel\\editproductviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E6ACF24-69DD-4328-9628-BCCDC101D3A2}|Farmer MP\\Farmer MP.csproj|solutionrelative:farmer mp\\viewmodel\\editproductviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E6ACF24-69DD-4328-9628-BCCDC101D3A2}|Farmer MP\\Farmer MP.csproj|c:\\users\\user\\source\\repos\\farmer mp\\farmer mp\\views\\shared\\farmerpan.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4E6ACF24-69DD-4328-9628-BCCDC101D3A2}|Farmer MP\\Farmer MP.csproj|solutionrelative:farmer mp\\views\\shared\\farmerpan.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E6ACF24-69DD-4328-9628-BCCDC101D3A2}|Farmer MP\\Farmer MP.csproj|c:\\users\\user\\source\\repos\\farmer mp\\farmer mp\\views\\farmers\\notifications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{4E6ACF24-69DD-4328-9628-BCCDC101D3A2}|Farmer MP\\Farmer MP.csproj|solutionrelative:farmer mp\\views\\farmers\\notifications.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E6ACF24-69DD-4328-9628-BCCDC101D3A2}|Farmer MP\\Farmer MP.csproj|c:\\users\\user\\source\\repos\\farmer mp\\farmer mp\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E6ACF24-69DD-4328-9628-BCCDC101D3A2}|Farmer MP\\Farmer MP.csproj|solutionrelative:farmer mp\\models\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E6ACF24-69DD-4328-9628-BCCDC101D3A2}|Farmer MP\\Farmer MP.csproj|c:\\users\\user\\source\\repos\\farmer mp\\farmer mp\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E6ACF24-69DD-4328-9628-BCCDC101D3A2}|Farmer MP\\Farmer MP.csproj|solutionrelative:farmer mp\\models\\product.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4E6ACF24-69DD-4328-9628-BCCDC101D3A2}|Farmer MP\\Farmer MP.csproj|c:\\users\\user\\source\\repos\\farmer mp\\farmer mp\\controllers\\buyercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4E6ACF24-69DD-4328-9628-BCCDC101D3A2}|Farmer MP\\Farmer MP.csproj|solutionrelative:farmer mp\\controllers\\buyercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "About.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\Views\\Home\\About.cshtml",
+              "RelativeDocumentMoniker": "Farmer MP\\Views\\Home\\About.cshtml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\Views\\Home\\About.cshtml",
+              "RelativeToolTip": "Farmer MP\\Views\\Home\\About.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAwAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-26T04:33:33.463Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "EditProductViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\ViewModel\\EditProductViewModel.cs",
+              "RelativeDocumentMoniker": "Farmer MP\\ViewModel\\EditProductViewModel.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\ViewModel\\EditProductViewModel.cs",
+              "RelativeToolTip": "Farmer MP\\ViewModel\\EditProductViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABwAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T03:58:33.099Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "farmerPan.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\Views\\Shared\\farmerPan.cshtml",
+              "RelativeDocumentMoniker": "Farmer MP\\Views\\Shared\\farmerPan.cshtml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\Views\\Shared\\farmerPan.cshtml",
+              "RelativeToolTip": "Farmer MP\\Views\\Shared\\farmerPan.cshtml",
+              "ViewState": "AgIAACQAAAAAAAAAAAAAADEAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-26T03:54:56Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\Views\\Product\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Farmer MP\\Views\\Product\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\Views\\Product\\Edit.cshtml",
+              "RelativeToolTip": "Farmer MP\\Views\\Product\\Edit.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-26T03:37:42.698Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Notifications.cshtml",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\Views\\Farmers\\Notifications.cshtml",
+              "RelativeDocumentMoniker": "Farmer MP\\Views\\Farmers\\Notifications.cshtml",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\Views\\Farmers\\Notifications.cshtml",
+              "RelativeToolTip": "Farmer MP\\Views\\Farmers\\Notifications.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAHUAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-05-26T03:07:12.285Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Order.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\Models\\Order.cs",
+              "RelativeDocumentMoniker": "Farmer MP\\Models\\Order.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\Models\\Order.cs",
+              "RelativeToolTip": "Farmer MP\\Models\\Order.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T02:29:51.453Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Product.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\Models\\Product.cs",
+              "RelativeDocumentMoniker": "Farmer MP\\Models\\Product.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\Models\\Product.cs",
+              "RelativeToolTip": "Farmer MP\\Models\\Product.cs",
+              "ViewState": "AgIAABAAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T02:29:22.458Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "BuyerController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\Controllers\\BuyerController.cs",
+              "RelativeDocumentMoniker": "Farmer MP\\Controllers\\BuyerController.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\Controllers\\BuyerController.cs",
+              "RelativeToolTip": "Farmer MP\\Controllers\\BuyerController.cs",
+              "ViewState": "AgIAAMEAAAAAAAAAAADwvwAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T02:28:33.451Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "Farmer MP\\Controllers\\ProductController.cs",
+              "ToolTip": "C:\\Users\\User\\source\\repos\\Farmer MP\\Farmer MP\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "Farmer MP\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAALcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-05-26T02:24:47.823Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

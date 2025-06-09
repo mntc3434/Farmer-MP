@@ -1,0 +1,158 @@
+﻿
+.product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.product-item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        border: 1px solid #ddd;
+        padding: 15px;
+        border-radius: 10px;
+        background-color: #f9f9f9;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-item:hover {
+        transform: translateY(-5px);
+    }
+.product-list-title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #2E8B57;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    position: relative;
+}
+    .product-list-title::before,
+    .product-list-title::after {
+        content: "";
+        flex: 1;
+        height: 2px;
+        background-color: #000;
+    }
+
+/* Search and Filter Section */
+.product-filter {
+    display: flex; /* Ensures elements stay in one row */
+    align-items: center; /* Aligns items vertically */
+    justify-content: space-between; /* Adjust spacing */
+    padding: 20px 20px 20px 20px;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+}
+
+    .search-container .search-box {
+        width: 450px;
+       /* Adds space between search box and filter */
+    }
+
+.search-button {
+    background: #ddd;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.filter-container {
+    display: flex;
+    align-items: center;
+    width: auto; /* Adjust width dynamically */
+}
+
+.category-filter {
+    width: 160px; /* Increased width */
+    margin-right: 10px;
+}
+
+.filter-button {
+    padding: 8px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+
+/* Responsive design for smaller screens */
+@media (max-width: 768px) {
+    .search-container .search-box {
+        width: 800px;
+    }
+
+    .filter-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .category-filter {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    .filter-button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .search-container .search-box {
+        width: 150px;
+    }
+}
+
+/* Button and Card Styles */
+.card {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fff;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-footer {
+    padding: 10px;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: white;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: white;
+    width: 100%;
+}
+.custom-product-card {
+    height: 420px; /* or your desired height */
+    overflow: hidden; /* optional: hide overflow if content exceeds */
+}
+@media (max-width: 768px) {
+    .product-list-title {
+        font-size: 2rem;
+    }
+
+    .product-filter {
+        flex-direction: column;
+    }
+
+        .product-filter > div {
+            margin-bottom: 1rem;
+            width: 100%;
+        }
+}

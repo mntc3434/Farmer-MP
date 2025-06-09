@@ -1,0 +1,229 @@
+﻿@model Farmer_MP.ViewModel.VerifyEmailViewModel
+@{
+    ViewData["Title"] = "Verify Email";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewData["Title"] - Farmer's Marketplace</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-green: #4a8c2a;
+            --secondary-green: #6bbd46;
+            --light-green: #e8f5e9;
+            --dark-green: #2e5e1a;
+            --earth-brown: #8d6e63;
+            --sun-yellow: #ffc107;
+        }
+
+        body {
+            background-color: #f9f9f7;
+           
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .auth-container {
+            backdrop-filter: blur(8px);
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .auth-header {
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .auth-header h4 {
+            margin: 0;
+            font-weight: 600;
+            font-size: 1.5rem;
+        }
+
+        .auth-header::after {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 1200 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,0V46.29c47.79,22.2,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" fill="%23f9f9f7" opacity=".9"/></svg>');
+            background-size: cover;
+        }
+
+        .auth-body {
+            padding: 2rem;
+        }
+
+        .form-control {
+            border-radius: 8px;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            transition: all 0.3s;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary-green);
+            box-shadow: 0 0 0 0.25rem rgba(107, 189, 70, 0.25);
+        }
+
+        .btn-verify {
+            background: linear-gradient(135deg, var(--primary-green), var(--secondary-green));
+            border: none;
+            padding: 12px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            transition: all 0.3s;
+        }
+
+        .btn-verify:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(74, 140, 42, 0.3);
+        }
+
+        .alert {
+            border-radius: 8px;
+        }
+
+        .resend-link {
+            color: var(--primary-green);
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s;
+        }
+
+        .resend-link:hover {
+            color: var(--dark-green);
+            text-decoration: underline;
+        }
+
+        .otp-input {
+            letter-spacing: 5px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .farmer-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-green);
+        }
+
+        .leaf-decoration {
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            opacity: 0.1;
+            z-index: -1;
+        }
+
+        .leaf-1 {
+            top: 20px;
+            left: 20px;
+            transform: rotate(45deg);
+        }
+
+        .leaf-2 {
+            bottom: 20px;
+            right: 20px;
+            transform: rotate(-20deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container py-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-lg-5">
+                <div class="auth-container">
+                    <div class="auth-header">
+                        <i class="farmer-icon fas fa-leaf"></i>
+                        <h4>Verify Your Email</h4>
+                        <p class="mb-0">Welcome to Farmer's Marketplace</p>
+                    </div>
+                    <div class="auth-body">
+                        @if (TempData["ErrorMessage"] != null)
+                        {
+                            <div class="alert alert-danger alert-dismissible fade show d-flex align-items-center">
+                                <i class="fas fa-exclamation-circle me-2"></i>
+                                <div>@TempData["ErrorMessage"]</div>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        }
+                        @if (TempData["SuccessMessage"] != null)
+                        {
+                            <div class="alert alert-success alert-dismissible fade show d-flex align-items-center">
+                                <i class="fas fa-check-circle me-2"></i>
+                                <div>@TempData["SuccessMessage"]</div>
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                            </div>
+                        }
+
+                        <form asp-action="VerifyEmail" method="post">
+                            <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                            <div class="mb-4">
+                                <label class="form-label fw-semibold">Email Address</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light"><i class="fas fa-envelope"></i></span>
+                                    <input type="email" class="form-control bg-light" value="@ViewBag.Email" readonly />
+                                    <input type="hidden" name="email" value="@ViewBag.Email" />
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <label asp-for="OTP" class="form-label fw-semibold">Verification Code</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-light"><i class="fas fa-key"></i></span>
+                                    <input asp-for="OTP" class="form-control otp-input" placeholder="Enter 6-digit code" maxlength="6" />
+                                </div>
+                                <span asp-validation-for="OTP" class="text-danger small"></span>
+                                <div class="form-text">Check your email for the verification code</div>
+                            </div>
+
+                            <div class="d-grid mb-3">
+                                <button type="submit" class="btn btn-verify text-white">
+                                    <i class="fas fa-check-circle me-2"></i>Verify Email
+                                </button>
+                            </div>
+                        </form>
+
+                        <div class="text-center mt-4">
+                            <p class="mb-2">Didn't receive the code? <a class="resend-link" asp-action="ResendOTP" asp-route-email="@ViewBag.Email"><i class="fas fa-redo me-1"></i>Resend Code</a></p>
+                            <p class="small text-muted"><i class="fas fa-info-circle me-1"></i>Please check your spam folder if you don't see the email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            if ('@TempData["ErrorMessage"]' || '@TempData["SuccessMessage"]') {
+                setTimeout(function () {
+                    $('.alert').fadeOut(400);
+                }, 5000);
+            }
+
+            // Auto focus OTP input
+            $('input[name="OTP"]').focus();
+        });
+    </script>
+</body>
+</html>

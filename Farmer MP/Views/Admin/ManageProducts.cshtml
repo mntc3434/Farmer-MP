@@ -1,0 +1,44 @@
+﻿@model IEnumerable<Farmer_MP.Models.Product>
+
+@{
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+    ViewData["Title"] = "Manage Products";
+}
+
+<h2 class="mt-4"><i class="fas fa-box"></i> Manage Products</h2>
+
+<table class="table table-bordered mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th>Product ID</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Status</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var product in Model)
+        {
+            <tr>
+                <td>@product.ProductID</td>
+                <td>@product.Name</td>
+                <td>@product.Category</td>
+                <td>
+                    @if (product.Availability)
+                    {
+                        <span class="badge bg-success">Listed</span>
+                    }
+                    else
+                    {
+                        <span class="badge bg-secondary">Unlisted</span>
+                    }
+                </td>
+                <td>
+                    <a class="btn btn-primary btn-sm" asp-controller="Admin" asp-action="EditProduct" asp-route-id="@product.ProductID">Edit</a>
+                    <a class="btn btn-danger btn-sm" asp-controller="Admin" asp-action="RemoveProduct" asp-route-id="@product.ProductID">Remove</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

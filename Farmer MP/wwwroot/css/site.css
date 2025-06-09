@@ -1,0 +1,263 @@
+/* General Layout */
+body {
+    margin: 0;
+    padding: 0;
+   
+}
+
+
+/* Hero Section (First Image Section) */
+.hero {
+    position: relative;
+    background-image: url('/images/farm-background.jpg');
+    background-size: cover;
+    background-position: center center;
+    height: 100vh; /* Full screen height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+/* Featured Products Section */
+.container {
+    margin-top: 50px; /* Adjust space between sections */
+}
+
+
+/* Card Styles for Product Listings */
+.card-img-top {
+    height: 200px; /* Ensures all images have the same height */
+    object-fit: cover; /* Ensures images scale properly */
+}
+
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+    .card-body .btn {
+        margin-top: auto; /* Pushes the button to the bottom for alignment */
+    }
+
+/* Featured Products Section Animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.product-section {
+    animation: slideIn 1s ease-in-out;
+    animation-fill-mode: forwards;
+}
+
+/* About Us Section */
+.about-us {
+    margin-top: 5rem;
+    text-align: center;
+}
+
+    .about-us h2 {
+        font-size: 2rem;
+        font-weight: bold;
+    }
+
+    .about-us p {
+        font-size: 1rem;
+        color: #555;
+    }
+
+/* Testimonials Section */
+/* Testimonial Section Styling */
+.testimonial-section {
+    background-color: #f4f4f4;
+    padding: 40px 0;
+}
+
+    .testimonial-section h2 {
+        font-size: 2.5rem;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+.testimonial-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    margin: 15px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease;
+    height: 220px; /* Fixed height for consistency */
+}
+
+    .testimonial-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .testimonial-card p {
+        font-size: 1.1rem;
+        font-style: italic;
+        color: #666;
+        margin-bottom: 20px;
+    }
+
+    .testimonial-card h5 {
+        font-size: 1.2rem;
+        font-weight: bold;
+        color: #333;
+    }
+
+/* Continuous Right to Left Animation */
+@keyframes slideRightToLeft {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+.testimonial-container {
+    display: flex;
+    flex-wrap: nowrap;
+    animation: slideRightToLeft 45s linear infinite; /* Slowed down the animation speed */
+}}
+
+    .testimonial-container .col-md-4 {
+        flex: 0 0 auto;
+        width: 33.33%; /* Each testimonial takes up 1/3 of the container */
+        margin-right: 30px; /* Space between the testimonials */
+        transition: transform 0.3s ease;
+    }
+
+        /* Hover effect to zoom in on the testimonial */
+        .testimonial-container .col-md-4:hover {
+            transform: scale(1.05);
+        }
+
+/* Fade-in effect for the testimonials */
+.testimonial-section .testimonial-card {
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Styling for the testimonial text */
+.testimonial-section p {
+    font-size: 1.1rem;
+    font-style: italic;
+    color: #555;
+}
+
+/* Styling for the testimonial author */
+.testimonial-section h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Responsive Design: Stacked layout for smaller screens */
+@media (max-width: 768px) {
+    .testimonial-container {
+        flex-direction: column;
+    }
+
+        .testimonial-container .col-md-4 {
+            width: 100%;
+            margin-right: 0;
+            margin-bottom: 20px;
+        }
+}
+
+
+/* Sponsor Section */
+.sponsor-section {
+    background-color: #ffffff;
+    padding: 3rem 0;
+}
+
+    .sponsor-section img {
+        max-width: 200px;
+        margin: 10px;
+    }
+
+/* Footer Section */
+.footer {
+    background-color: #343a40;
+    color: #ffffff;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+    .footer p {
+        font-size: 1rem;
+        color: #ddd;
+    }
+
+    .footer a {
+        color: #28a745;
+        text-decoration: none;
+    }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+/* Navigation Bar Styles */
+
+
+/* Buttons */
+.btn-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    color: white;
+}
+
+
+    .btn-success:hover {
+        background-color: #218838;
+        border-color: #1e7e34;
+    }
+
+.btn {
+    border-radius: 25px;
+    padding: 0.75rem 1.5rem;
+}
+
+/* Input Fields */
+.input-field {
+    border-radius: 8px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 1rem;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Misc */
+.container {
+    margin-top: 3rem;
+}
+
+.text-center {
+    text-align: center;
+}

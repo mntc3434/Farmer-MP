@@ -1,0 +1,297 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="WelcomeToFarmerMarketPlace" xml:space="preserve">
+    <value>ወደ አትክልት ገበያ በደህና መጡ</value>
+  </data>
+  <data name="FreshOrganicProduce" xml:space="preserve">
+    <value>ትኩስ እና ኦርጋኒክ ምርቶች</value>
+  </data>
+  <data name="DiscoverFarmFreshProducts" xml:space="preserve">
+    <value>ከአትክልት ማሳዎች በቀጥታ የሚገኙ ትኩስ ምርቶችን ይፈልጉ</value>
+  </data>
+  <data name="ShopNow" xml:space="preserve">
+    <value>አሁን ይግዙ</value>
+  </data>
+  <data name="LocalDairyProducts" xml:space="preserve">
+    <value>የአካባቢ የወተት ምርቶች</value>
+  </data>
+  <data name="HighQualityDairyDescription" xml:space="preserve">
+    <value>ከታመኑ እርባታዎች የሚገኝ ከፍተኛ ጥራት ያለው ወተት፣ አይስ እና ሌሎች</value>
+  </data>
+  <data name="ExploreNow" xml:space="preserve">
+    <value>አሁን ያስሱ</value>
+  </data>
+  <data name="SupportLocalFarmers" xml:space="preserve">
+    <value>አካባቢያዊ አርሶ አደሮችን ይደግፉ</value>
+  </data>
+  <data name="SustainableShopping" xml:space="preserve">
+    <value>በተጠናከረ መንገድ ይግዙ እና የአካባቢዎን ማህበረሰብ ይበልጥ አቅዱ</value>
+  </data>
+  <data name="JoinUs" xml:space="preserve">
+    <value>ከእኛ ጋር ይቀላቀሉ</value>
+  </data>
+  <data name="FeaturedProducts" xml:space="preserve">
+    <value>የተለዩ ምርቶች</value>
+  </data>
+  <data name="FreshVegetables" xml:space="preserve">
+    <value>ትኩስ አትክልቶች</value>
+  </data>
+  <data name="LocalVegetablesDescription" xml:space="preserve">
+    <value>ከአካባቢ የሚገኙ አትክልት ማሳዎች የተገኙ ትኩስ አትክልቶች</value>
+  </data>
+  <data name="ViewDetails" xml:space="preserve">
+    <value>ዝርዝሮችን ይመልከቱ</value>
+  </data>
+  <data name="OrganicFruits" xml:space="preserve">
+    <value>ኦርጋኒክ ፍራፍሬዎች</value>
+  </data>
+  <data name="DeliciousFruitsDescription" xml:space="preserve">
+    <value>ጣፋጭ እና በተፈጥሮ የተጨማሪ ፍራፍሬዎች</value>
+  </data>
+  <data name="DairyProducts" xml:space="preserve">
+    <value>የወተት ምርቶች</value>
+  </data>
+  <data name="FreshDairyDescription" xml:space="preserve">
+    <value>ትኩስ ወተት፣ አይስ እና ሌሎች</value>
+  </data>
+  <data name="CustomerTestimonials" xml:space="preserve">
+    <value>ደንበኞቻችን ምን ይላሉ</value>
+  </data>
+  <data name="Testimonial1" xml:space="preserve">
+    <value>"የትኩሱ አትክልቶች ጥራት እወደዋለሁ! ፈጣን አቅራቢያ እና ጥሩ አገልግሎት!"</value>
+  </data>
+  <data name="Testimonial2" xml:space="preserve">
+    <value>"ኦርጋኒክ ፍራፍሬዎቹ አስደናቂ ናቸው። በእርግጠኝነት እንደገና እያዘዝኩ ነው!"</value>
+  </data>
+  <data name="Testimonial3" xml:space="preserve">
+    <value>"አስደናቂ ተሞክሮ፣ እና የወተት ምርቶቹ ከፍተኛ ጥራት ያላቸው ናቸው!"</value>
+  </data>
+  <data name="Previous" xml:space="preserve">
+    <value>ቀዳሚ</value>
+  </data>
+  <data name="Next" xml:space="preserve">
+    <value>ቀጣይ</value>
+  </data>
+  <data name="AboutFarmersMarket" xml:space="preserve">
+    <value>ስለ አትክልት ገበያ</value>
+  </data>
+  <data name="MarketDescription" xml:space="preserve">
+    <value>አርሶ አደሮችን በቀጥታ ከደንበኞች ጋር እናገናኛለን፣ ትኩስ እና ኦርጋኒክ ምርቶች ወደ ጠረጴዛዎ እንዲደርሱ እናረጋግጣለን።</value>
+  </data>
+  <data name="Company" xml:space="preserve">
+    <value>ኩባንያ</value>
+  </data>
+  <data name="AboutUs" xml:space="preserve">
+    <value>ስለ እኛ</value>
+  </data>
+  <data name="Careers" xml:space="preserve">
+    <value>ሙያዎች</value>
+  </data>
+  <data name="Policies" xml:space="preserve">
+    <value>ፖሊሲዎች</value>
+  </data>
+  <data name="Testimonials" xml:space="preserve">
+    <value>ምስክርነቶች</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>ድጋፍ</value>
+  </data>
+  <data name="FAQs" xml:space="preserve">
+    <value>ተደጋጋሚ ጥያቄዎች</value>
+  </data>
+  <data name="HelpCenter" xml:space="preserve">
+    <value>የእገዛ ማዕከል</value>
+  </data>
+  <data name="ReturnPolicy" xml:space="preserve">
+    <value>የመመለሻ ፖሊሲ</value>
+  </data>
+  <data name="PrivacyPolicy" xml:space="preserve">
+    <value>የግላዊነት ፖሊሲ</value>
+  </data>
+  <data name="ContactUs" xml:space="preserve">
+    <value>አግኙን</value>
+  </data>
+  <data name="EmailLabel" xml:space="preserve">
+    <value>ኢሜይል:</value>
+  </data>
+  <data name="PhoneLabel" xml:space="preserve">
+    <value>ስልክ:</value>
+  </data>
+  <data name="AddressLabel" xml:space="preserve">
+    <value>አድራሻ:</value>
+  </data>
+  <data name="StayUpdated" xml:space="preserve">
+    <value>ዘመናዊ ይሁኑ</value>
+  </data>
+  <data name="EmailPlaceholder" xml:space="preserve">
+    <value>ኢሜይልዎን ያስገቡ</value>
+  </data>
+  <data name="Subscribe" xml:space="preserve">
+    <value>ይመዝገቡ</value>
+  </data>
+  <data name="FarmersMarket" xml:space="preserve">
+    <value>አትክልት ገበያ</value>
+  </data>
+  <data name="AllRightsReserved" xml:space="preserve">
+    <value>ሁሉም መብቶች የተጠበቁ ናቸው</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>መነሻ</value>
+  </data>
+  <data name="Products" xml:space="preserve">
+    <value>ምርቶች</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>አግኙን</value>
+  </data>
+  <data name="Cart" xml:space="preserve">
+    <value>ጋሪ</value>
+  </data>
+  <data name="Language" xml:space="preserve">
+    <value>ቋንቋ</value>
+  </data>
+  <data name="Account" xml:space="preserve">
+    <value>መለያ</value>
+  </data>
+  <data name="Profile" xml:space="preserve">
+    <value>መገለጫ</value>
+  </data>
+  <data name="Dashboard" xml:space="preserve">
+    <value>ዳሽቦርድ</value>
+  </data>
+  <data name="MyOrders" xml:space="preserve">
+    <value>ትዕዛዞቼ</value>
+  </data>
+  <data name="Messages" xml:space="preserve">
+    <value>መልዕክቶች</value>
+  </data>
+  <data name="Logout" xml:space="preserve">
+    <value>ውጣ</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>ግባ</value>
+  </data>
+  <data name="Register" xml:space="preserve">
+    <value>ይመዝገቡ</value>
+  </data>
+  <data name="Search" xml:space="preserve">
+    <value>መነሻ</value>
+  </data>
+</root>

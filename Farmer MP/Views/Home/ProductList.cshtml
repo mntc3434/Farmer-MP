@@ -1,0 +1,458 @@
+﻿@model IEnumerable<Farmer_MP.Models.Product>
+
+@{
+    ViewData["Title"] = "Product List";
+}
+<head>
+    <link rel="stylesheet" href="~/css/product.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+</head>
+
+<style>
+    .dropdown-menu {
+        display: none;
+        position: absolute;
+        background-color: white;
+        border: 1px solid #ddd;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .nav-item:hover .dropdown-menu {
+        display: block;
+    }
+
+    .product-page {
+        padding-top: 90px; /* Adjust based on your navbar height */
+    }
+
+     .product-page {
+        padding-top: 80px;
+        background-color: #f8f9fa;
+    }
+    
+    .product-list-header {
+        background: linear-gradient(135deg, #4CAF50, #388E3C);
+        color: white;
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+        border-radius: 0 0 20px 20px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .product-list-title {
+        font-family: 'Playfair Display', serif;
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-top: 0.75rem;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+    
+    .product-list-subtitle {
+        font-size: 1.1rem;
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto;
+        opacity: 0.9;
+    }
+    
+    .product-filter {
+        background: white;
+        padding: 1rem;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        margin-bottom: 1.5rem;
+    }
+    
+    .product-item {
+        border: none;
+        border-radius: 12px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+        background: white;
+        position: relative;
+    }
+    
+    .product-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    
+    .product-item:hover .card-img-top {
+        transform: scale(1.05);
+    }
+    
+    .card-body {
+        padding: 1.25rem;
+    }
+    
+    .card-title {
+        font-weight: 600;
+        font-size: 1.1rem;
+        margin-bottom: 0.75rem;
+        color: #333;
+    }
+    
+    .card-text {
+        color: #666;
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+    
+    .product-price {
+        font-weight: 700;
+        color: #2E8B57;
+        font-size: 1.2rem;
+    }
+    
+    .product-meta {
+        font-size: 0.85rem;
+        color: #777;
+        margin-bottom: 0.5rem;
+    }
+    
+    .product-meta i {
+        margin-right: 5px;
+        color: #4CAF50;
+    }
+    
+    .card-footer {
+        background: white;
+        border-top: 1px solid rgba(0, 0, 0, 0.05);
+        padding: 1rem;
+    }
+    
+    .btn-success {
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 8px;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        transition: all 0.3s ease;
+    }
+    
+    .btn-success:hover {
+        background-color: #388E3C;
+        transform: translateY(-2px);
+    }
+    
+    .btn-primary {
+        background-color: #2196F3;
+        border: none;
+        border-radius: 8px;
+        font-weight: 500;
+        padding: 0.5rem 1rem;
+        transition: all 0.3s ease;
+        margin: 0.5rem 0;
+    }
+    
+    .btn-primary:hover {
+        background-color: #1976D2;
+        transform: translateY(-2px);
+    }
+    
+    .add-to-favorite {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background: rgba(255, 255, 255, 0.8);
+        border: none;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #f44336;
+        transition: all 0.3s ease;
+        z-index: 2;
+    }
+    
+    .add-to-favorite:hover {
+        background: white;
+        color: #f44336;
+        transform: scale(1.1);
+    }
+    
+    .add-to-favorite i {
+        font-size: 1rem;
+    }
+    
+    .product-badge {
+        position: absolute;
+        top: 15px;
+        left: 15px;
+        background: #FF9800;
+        color: white;
+        padding: 0.25rem 0.75rem;
+        border-radius: 20px;
+        font-size: 0.75rem;
+        font-weight: 600;
+        z-index: 2;
+    }
+    
+    .nearby-farmers-btn {
+        background: linear-gradient(135deg, #FF9800, #F57C00);
+        border: none;
+        border-radius: 8px;
+        color: white;
+        font-weight: 500;
+        padding: 0.5rem 1.5rem;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 2rem;
+    }
+    
+    .nearby-farmers-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 8px rgba(245, 124, 0, 0.3);
+    }
+    
+    .nearby-farmers-btn i {
+        margin-right: 8px;
+    }
+    
+    /* Search and Filter Enhancements */
+    #searchBox {
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        padding: 0.5rem 0.75rem;
+        transition: all 0.3s ease;
+    }
+    
+    #searchBox:focus {
+        border-color: #4CAF50;
+        box-shadow: 0 0 0 0.2rem rgba(76, 175, 80, 0.25);
+    }
+    
+    #categoryFilter {
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        padding: 0.5rem 0.75rem;
+    }
+    
+    #filterButton {
+        background-color: #4CAF50;
+        border: none;
+        border-radius: 8px;
+        padding: 0.5rem 1rem;
+        transition: all 0.3s ease;
+    }
+    
+    #filterButton:hover {
+        background-color: #388E3C;
+        transform: translateY(-2px);
+    }
+    
+    /* Responsive adjustments */
+   
+</style>
+
+
+<body class="product-page">
+    <partial name="_Navbar" />
+<div class="container mt-4">
+<h1 class="product-list-title">Product List</h1>
+<!-- Search and Filter Section -->
+<div class="product-filter row mb-4">
+        <div class="col-md-6">
+            <input type="text" id="searchBox" placeholder="Search Products..." class="form-control" />
+        </div>
+        <div class="col-md-4">
+            <select id="categoryFilter" class="form-control">
+                <option value="All">All Categories</option>
+                @foreach (var category in Model.Select(p => p.Category).Distinct())
+                {
+                    <option value="@category">@category</option>
+                }
+            </select>
+        </div>
+        <div class="col-md-2">
+            <button class="btn btn-primary w-100" id="filterButton">Filter</button>
+        </div>
+    </div>
+
+    <button class="btn btn-outline-success ml-2" onclick="redirectToNearbyFarmers()">
+        Find Nearby Farmers
+    </button>
+
+    <script>
+        function redirectToNearbyFarmers() {
+            window.location.href = '@Url.Action("NearbyFarmersWithProducts", "Home")';
+        }
+    </script>
+
+
+<script>
+    document.getElementById("filterButton").addEventListener("click", function () {
+        var categoryFilter = document.getElementById("categoryFilter").value.toLowerCase();
+        var products = document.querySelectorAll(".product-item");
+
+        products.forEach(function (product) {
+            var productCategory = product.getAttribute("data-category").toLowerCase();
+            if (categoryFilter === "all" || productCategory === categoryFilter) {
+                product.style.display = "";
+            } else {
+                product.style.display = "none";
+            }
+        });
+    });
+</script>
+
+
+<div class="product-list">
+    @foreach (var product in Model)
+    {
+        <div class="col-lg-3 col-md-4 col-sm-6 product-item" data-name="@product.Name" data-category="@product.Category">
+           <a href="@Url.Action("Details", "Home", new { id = product.ProductID })" class="text-decoration-none text-dark">
+             <div class="card h-100 ">
+
+                <!-- Product Image -->
+                @if (product.Images != null && product.Images.Any())
+                {
+                    <img src="@product.Images.FirstOrDefault().ImageUrl" alt="Product Image" class="card-img-top" />
+                }
+                else
+                {
+                    <img src="/images/placeholder.png" alt="No Image Available" class="card-img-top" />
+                }
+                            <div class="card-body">
+                                <h5 class="card-title">@product.Name</h5>
+                                <p class="card-text">@product.Description</p>
+                                <p><strong>Price:</strong> @product.Price Birr/Kg</p>
+                                <p><strong>Farmer:</strong> @product.Farmer.Name</p>
+                                <p><strong>Location:</strong> @product.Farmer.Address</p>
+                            </div>
+                <div class="card-footer text-center">
+                    <button class="btn btn-success add-to-cart"
+                            data-product-id="@product.ProductID"
+                            data-buyer-id="@Context.Session.GetInt32("UserID")">
+                        Add to Cart
+                    </button>
+
+                    <a href="@Url.Action("Index", "Message", new { buyerId = Context.Session.GetInt32("UserID"), farmerId = product.Farmer.UserID, productId = product.ProductID })"
+                       class="btn btn-primary chat-with-farmer">
+                        Chat with Farmer
+                    </a>
+                                <span class="product-badge">Local</span>
+
+                                <!-- Favorite Button -->
+                                <button class="btn add-to-favorite"
+                                        data-product-id="@product.ProductID"
+                                        title="Add to Favorites">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                </div>
+
+             </div>
+            </a>
+        </div>
+    }
+</div>
+</div>
+<script>
+    $(document).ready(function () {
+        $(".add-to-cart").click(function () {
+            var productId = $(this).data("product-id");
+            var buyerId = $(this).data("buyer-id");
+
+            if (!buyerId) {
+                alert("You must be logged in to add items to the cart.");
+                return;
+            }
+
+            $.ajax({
+                url: '@Url.Action("AddToCart", "Home")',
+                type: 'POST',
+                data: { productId: productId, quantity: 1 },  // Assuming quantity is 1
+                success: function (response) {
+                    alert(response.message);
+                },
+                error: function () {
+                    alert("Failed to add the product to the cart.");
+                }
+            });
+        });
+    });
+</script>
+<!-- Button to redirect to Nearby Farmers page -->
+
+
+
+</body>
+
+
+<!-- JavaScript for Search and Filter -->
+<script>
+    document.getElementById("searchBox").addEventListener("input", function () {
+        var searchValue = this.value.toLowerCase();
+        var products = document.querySelectorAll(".product-item");
+
+        products.forEach(function (product) {
+            var productName = product.querySelector(".card-title").textContent.toLowerCase();
+            if (productName.includes(searchValue)) {
+                product.style.display = "";
+            } else {
+                product.style.display = "none";
+            }
+        });
+    });
+
+    document.getElementById("filterButton").addEventListener("click", function () {
+        var categoryFilter = document.getElementById("categoryFilter").value;
+        var products = document.querySelectorAll(".product-item");
+
+        products.forEach(function (product) {
+            var productCategory = product.getAttribute("data-category").toLowerCase();
+            if (categoryFilter === "All" || productCategory.includes(categoryFilter.toLowerCase())) {
+                product.style.display = "";
+            } else {
+                product.style.display = "none";
+            }
+        });
+    });
+</script>
+<script>
+    $(document).ready(function () {
+        $(".add-to-favorite").click(function () {
+            var button = $(this);
+            var productId = button.data("product-id");
+
+            $.ajax({
+                url: '@Url.Action("ToggleFavorite", "Home")',
+                type: 'POST',
+                data: { productId: productId },
+                success: function (response) {
+                    if (response.success) {
+                        alert(response.message);
+                        if (response.isFavorite) {
+                            button.find("i").removeClass("fa-heart").addClass("fa-heart-circle-check text-danger");
+                        } else {
+                            button.find("i").removeClass("fa-heart-circle-check text-danger").addClass("fa-heart");
+                        }
+                    } else {
+                        alert(response.message);
+                    }
+                },
+                error: function () {
+                    alert("An error occurred while processing the favorite action.");
+                }
+            });
+        });
+    });
+
+</script>
+<partial name="_Footer" />

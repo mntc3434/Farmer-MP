@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Make a Payment";
+    var totalAmount = ViewBag.TotalAmount ?? 0;
+}
+
+<h2>Make a Payment</h2>
+
+<form asp-action="ProcessPayment" method="post">
+    <div>
+        <label for="firstName">First Name:</label>
+        <input type="text" name="firstName" required />
+    </div>
+    <div>
+        <label for="lastName">Last Name:</label>
+        <input type="text" name="lastName" required />
+    </div>
+    <div>
+        <label for="email">Email:</label>
+        <input type="email" name="email" required />
+    </div>
+
+    <div>
+        <label>Total Amount:</label>
+        <input type="text" value="@totalAmount.ToString("0.00")" readonly />
+    </div>
+
+    <button type="submit">Pay Now</button>
+</form>
+
+@if (ViewBag.Error != null)
+{
+    <p style="color: red">@ViewBag.Error</p>
+}

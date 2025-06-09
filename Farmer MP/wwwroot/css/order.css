@@ -1,0 +1,202 @@
+﻿body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #f4f7fc;
+    margin: 0;
+    padding: 0;
+}
+
+.order-history {
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    margin: auto;
+}
+
+header h2 {
+    font-size: 32px;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #4f9f8d;
+    padding-bottom: 5px;
+}
+
+.order-list {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.order-item {
+    padding: 20px;
+    background-color: #fbfbfb;
+    border-radius: 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+}
+
+    .order-item:hover {
+        transform: scale(1.01);
+    }
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+    .order-header h4 {
+        font-size: 20px;
+        font-weight: 600;
+        color: #34495e;
+    }
+
+.order-date {
+    font-size: 14px;
+    color: #888;
+}
+
+.product-details p,
+.order-details p {
+    font-size: 15px;
+    color: #333;
+    margin: 5px 0;
+}
+
+.status {
+    font-weight: 600;
+    color: #4f9f8d;
+}
+
+.order-separator {
+    margin-top: 20px;
+    border: 1px solid #ddd;
+}
+
+.no-orders {
+    font-size: 16px;
+    text-align: center;
+    color: #34495e;
+}
+
+.review-btn {
+    margin-top: 10px;
+    background-color: #4f9f8d;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+    .review-btn:hover {
+        background-color: #3d8d7b;
+    }
+
+.review-box.submitted {
+    margin-top: 10px;
+    background-color: #eafaf6;
+    padding: 12px;
+    border-left: 5px solid #4f9f8d;
+    border-radius: 6px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 8% auto;
+    padding: 30px;
+    border-radius: 10px;
+    width: 40%;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    position: relative;
+}
+
+    .modal-content h3 {
+        margin-bottom: 15px;
+        color: #2c3e50;
+    }
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+button[type="submit"] {
+    background-color: #4f9f8d;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+    button[type="submit"]:hover {
+        background-color: #3c7f6f;
+    }
+
+.back-btn {
+    padding: 8px 12px;
+    border-radius: 6px;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+    .back-btn:hover {
+        background-color: #d9d9d9;
+    }
+
+.status-Pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status-Completed {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-Delivered {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status-Shipped {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+.status-Cancelled {
+    background-color: #f8d7da;
+    color: #721c24;
+}

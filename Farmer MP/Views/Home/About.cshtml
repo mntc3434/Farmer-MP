@@ -1,0 +1,112 @@
+﻿@{
+    ViewData["Title"] = "About Us - Farmer MarketPlace";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <style>
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <partial name="_Navbar" />
+
+    <!-- About Us Hero Section -->
+    <section class="hero text-center text-white py-5" style="background: url('/images/agriculturebg.jpg') no-repeat center center; background-size: cover;">
+        <div class="container">
+            <h1 class="display-4 fw-bold">
+                <span style="color: #6C63FF;">About Farmer</span> MarketPlace
+            </h1>
+
+            <p class="lead"> <span style="color: #264065">Connecting farmers and buyers for</span> a fresher, healthier tomorrow.</p>
+        </div>
+    </section>
+
+    <!-- Who We Are -->
+    <section class="container my-5">
+        <h2 class="text-center text-dark">Who We Are</h2>
+        <p class="text-center">Farmer MarketPlace is a trusted platform that connects local farmers with buyers, ensuring fresh, organic, and sustainable produce is delivered directly from the farm to your doorstep.</p>
+    </section>
+
+    <!-- Our Mission and Vision -->
+    <section class="container my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="text-dark">Our Mission</h3>
+                <p>To empower farmers and provide buyers with access to fresh, organic, and locally sourced produce, fostering a healthy and sustainable food ecosystem.</p>
+            </div>
+            <div class="col-md-6">
+                <h3 class="text-dark">Our Vision</h3>
+                <p>To become the leading digital marketplace for farm-fresh products, promoting sustainable agriculture and fair trade practices worldwide.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="container my-5">
+        <h2 class="text-center text-dark">How It Works</h2>
+        <div class="row text-center mt-4">
+            <div class="col-md-4">
+                <i class="bi bi-shop text-success display-4"></i>
+                <h5>For Farmers</h5>
+                <p>Register your farm, list your products, and connect with buyers directly.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="bi bi-cart text-success display-4"></i>
+                <h5>For Buyers</h5>
+                <p>Browse fresh produce, place orders, and get farm-to-table delivery.</p>
+            </div>
+            <div class="col-md-4">
+                <i class="bi bi-truck text-success display-4"></i>
+                <h5>Fast Delivery</h5>
+                <p>Receive your order fresh and on time with our reliable delivery partners.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="container my-5">
+        <h2 class="text-center text-dark">Why Choose Farmer MarketPlace?</h2>
+        <ul class="list-group mt-4">
+            <li class="list-group-item"><i class="bi bi-check-circle text-success"></i> 100% Fresh and Organic Products</li>
+            <li class="list-group-item"><i class="bi bi-check-circle text-success"></i> Direct Connection Between Farmers and Buyers</li>
+            <li class="list-group-item"><i class="bi bi-check-circle text-success"></i> Sustainable and Eco-Friendly Farming Practices</li>
+            <li class="list-group-item"><i class="bi bi-check-circle text-success"></i> Secure and Hassle-Free Transactions</li>
+        </ul>
+    </section>
+
+    <!-- Contact Info -->
+    <section class="container text-center my-5">
+        <h2 class="text-dark">Get In Touch</h2>
+        <p>Have questions or need support? Contact us anytime.</p>
+        <p><i class="bi bi-envelope"></i> Email: support@farmersmarket.com</p>
+        <p><i class="bi bi-telephone"></i> Phone: +123 456 7890</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 text-center">
+        <p>&copy; 2025 Farmer MarketPlace | All Rights Reserved</p>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

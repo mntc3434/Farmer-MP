@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Payment Success";
+}
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 100vh;">
+    <div class="card shadow-lg text-center p-4" style="width: 400px; border-radius: 12px;">
+        <i class="bi bi-check-circle-fill text-success" style="font-size: 4rem;"></i>
+        <h3 class="text-success mt-3">Payment Successful!</h3>
+        <p class="text-muted">Your order has been processed successfully. Thank you for shopping with us! 🎉</p>
+
+        <a href="@Url.Action("ProductList", "Home")" class="btn btn-primary w-100">Continue Shopping</a>
+    </div>
+</div>
+
+<!-- Bootstrap Icons -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">

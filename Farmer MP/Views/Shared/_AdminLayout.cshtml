@@ -1,0 +1,67 @@
+﻿@{
+    Layout = null;
+}
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+<style>
+    body {
+        background-color: #f8f9fa;
+    }
+
+    .sidebar {
+        height: 100vh;
+        background-color: #212529;
+        color: white;
+        padding: 20px;
+        position: fixed;
+        width: 230px;
+    }
+
+        .sidebar a {
+            color: white;
+            display: block;
+            padding: 12px 15px;
+            margin-bottom: 5px;
+            border-radius: 6px;
+            text-decoration: none;
+        }
+
+            .sidebar a:hover, .sidebar a.active {
+                background-color: #495057;
+            }
+
+    .logout-btn {
+        position: absolute;
+        bottom: 30px;
+        left: 20px;
+        width: 85%;
+    }
+</style>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav class="sidebar col-md-3 col-lg-2 d-md-block">
+            <h4 class="text-center mb-4">Admin Panel</h4>
+            <a href="@Url.Action("AdminDashboard", "Admin")"><i class="fas fa-tachometer-alt me-2"></i> Dashboard</a>
+            <a href="@Url.Action("ManageUsers", "Admin")"><i class="fas fa-users me-2"></i> Manage Users</a>
+            <a href="@Url.Action("ManageProducts", "Admin")"><i class="fas fa-box me-2"></i> Manage Products</a>
+            <a href="@Url.Action("Orders", "Admin")"><i class="fas fa-shopping-cart me-2"></i> Orders</a>
+            <a href="@Url.Action("Analytics", "Admin")"><i class="fas fa-chart-line me-2"></i> Analytics</a>
+            <a href="@Url.Action("Index", "Message")"><i class="fas fa-envelope"></i> Messages</a>
+            <a href="@Url.Action("Settings", "Admin")"><i class="fas fa-cog me-2"></i> Settings</a>
+            <form asp-controller="Account" asp-action="Logout" method="post" class="logout-btn">
+                <button class="btn btn-danger w-100"><i class="fas fa-sign-out-alt me-2"></i>Logout</button>
+            </form>
+        </nav>
+
+        <!-- Main content -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            @RenderBody()
+        </main>
+    </div>
+</div>
+@RenderSection("Scripts", required: false)
+

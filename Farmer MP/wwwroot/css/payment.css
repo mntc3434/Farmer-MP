@@ -1,0 +1,114 @@
+﻿/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+/* Centered Payment Container */
+.payment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Payment Card */
+.payment-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.1);
+    width: 1000px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+    .payment-card h3 {
+        font-weight: 600;
+        margin-bottom: 30px;
+        text-align: center;
+    }
+
+/* Form Input Fields */
+.form-control {
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #ced4da;
+    padding: 12px;
+    font-size: 16px;
+}
+
+    .form-control:focus {
+        border-color: #007bff;
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.2);
+    }
+
+/* Input Group Text */
+.input-group-text {
+    background: #f1f1f1;
+    border-radius: 10px 0 0 10px;
+    border-right: 0;
+}
+
+/* Payment Form Grid */
+.payment-form {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px;
+}
+
+    .payment-form .col {
+        display: flex;
+        flex-direction: column;
+    }
+
+.form-label {
+    margin-bottom: 8px;
+}
+
+.payment-form input {
+    padding: 12px;
+}
+
+/* Button Styles */
+.btn-success {
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 400;
+    padding: 15px 30px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+    .btn-success i {
+        font-size: 20px;
+        margin-right: 10px;
+       
+    }
+
+    .btn-success:hover {
+        background: linear-gradient(135deg, #45a049, #4CAF50);
+        box-shadow: 0 4px 15px rgba(0, 123, 255, 0.2);
+        transform: translateY(-2px);
+    }
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+    .payment-form {
+        grid-template-columns: 1fr; /* Single column on small screens */
+    }
+}
+
+.payment-card .payment-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}

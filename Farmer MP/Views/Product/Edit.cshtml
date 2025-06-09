@@ -1,0 +1,92 @@
+﻿@model Farmer_MP.Models.EditProductViewModel
+
+@{
+    Layout = "farmerPan";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center text-primary mb-4">Edit Product</h2>
+
+    <form asp-action="Edit" method="post" enctype="multipart/form-data">
+        <input type="hidden" asp-for="ProductID" />
+        @Html.AntiForgeryToken()
+
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group">
+                    <label asp-for="Name"></label>
+                    <input asp-for="Name" class="form-control" />
+                    <span asp-validation-for="Name" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Description"></label>
+                    <textarea asp-for="Description" class="form-control" rows="4"></textarea>
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Price"></label>
+                    <input asp-for="Price" class="form-control" />
+                    <span asp-validation-for="Price" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="Category"></label>
+                    <input asp-for="Category" class="form-control" />
+                    <span asp-validation-for="Category" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label>Replace Product Image</label>
+                    <input type="file" name="NewImages" class="form-control" />
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <h4 class="text-primary">Current Image</h4>
+                @if (Model.Images != null && Model.Images.Any())
+                {
+                    <img src="@Model.Images.First().ImageUrl?v=@DateTime.Now.Ticks"
+                         class="img-fluid mb-3 rounded"
+                         alt="Product Image" />
+                }
+                else
+                {
+                    <p>No image available</p>
+                }
+            </div>
+        </div>
+
+        <div class="d-flex justify-content-center mt-4">
+            <button type="submit" class="btn btn-success text-white px-5 py-3 rounded-3">Save Changes</button>
+        </div>
+    </form>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+<style>
+    .btn {
+        transition: background-color 0.3s ease;
+    }
+
+        .btn:hover {
+            background-color: #28a745;
+        }
+
+    .form-control {
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        font-weight: bold;
+    }
+</style>

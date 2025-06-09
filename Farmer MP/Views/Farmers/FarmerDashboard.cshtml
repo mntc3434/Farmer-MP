@@ -1,0 +1,140 @@
+﻿@model Farmer_MP.ViewModel.FarmerDashboardViewModel
+@{
+    ViewData["Title"] = "Farmer Dashboard";
+}
+<head>
+    <link rel="stylesheet" href="~/css/FarmerDashboard.css" asp-append-version="true" />
+</head>
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar Menu -->
+        <div class="col-md-2 bg-dark text-white sidebar p-4">
+            <h3 class="text-center mb-4">Farmer Panel</h3>
+            <hr class="text-white" />
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="@Url.Action("FarmerDashboard", "Farmers")">🏠 Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="@Url.Action("Index", "Product")">📦 Manage Products</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="@Url.Action("Notifications", "Farmers")">🔔 Notifications (@Model.NewOrders)</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="@Url.Action("Index", "Message")">📩 Messages (@Model.NewMessages)</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="@Url.Action("Profile", "Farmers")">👤 Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="@Url.Action("Logout", "Farmers")">🚪 Logout</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Dashboard Content -->
+        <div class="col-md-9 p-4">
+            <!-- Top Stats -->
+            <div class="row mb-4">
+                <div class="col-md-4">
+                    <div class="card p-4 bg-success text-white shadow-lg rounded">
+                        <h5 class="font-weight-bold">Total Income</h5>
+                        <h3>@Model.TotalIncome Birr</h3>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 bg-warning text-dark shadow-lg rounded">
+                        <h5 class="font-weight-bold">Pending Orders</h5>
+                        <h3>@Model.NewOrders</h3>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card p-4 bg-primary text-white shadow-lg rounded">
+                        <h5 class="font-weight-bold">New Messages</h5>
+                        <h3>@Model.NewMessages</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Order Status Breakdown -->
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <h3 class="mb-3">Orders Overview</h3>
+                    <table class="table table-bordered table-striped shadow-lg rounded">
+                        <thead class="bg-light">
+                            <tr>
+                                <th>Product</th>
+                                <th>Quantity</th>
+                                <th>Total Price</th>
+                                <th>Status</th>
+                                <th>Payment</th>
+                                <th>Order Date</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var order in Model.Orders)
+                            {
+                                <tr>
+                                    <td>@order.Product.Name</td>
+                                    <td>@order.Quantity</td>
+                                    <td>@order.TotalPrice Birr</td>
+                                    <td><span class="badge bg-info">@order.OrderStatus</span></td>
+                                    <td>
+                                        @if (order.PaymentStatus == "Paid")
+                                        {
+                                            <span class="badge bg-success">Paid</span>
+                                        }
+                                        else
+                                        {
+                                            <span class="badge bg-danger">Pending</span>
+                                        }
+                                    </td>
+                                    <td>@order.OrderDate.ToString("yyyy-MM-dd")</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!-- Products Table -->
+            <div class="row mt-4">
+                <div class="col-md-12">
+                    <h3>Your Products</h3>
+                    <a href="@Url.Action("Index", "Product")" class="btn btn-success mb-3 shadow-lg rounded">➕ Add New Product</a>
+                    <table class="table table-striped table-bordered shadow-lg rounded">
+                        <thead class="bg-light">
+                            <tr>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Category</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var product in Model.Products)
+                            {
+                                <tr>
+                                    <td>@product.Name</td>
+                                    <td>@product.Price Birr</td>
+                                    <td>@product.Category</td>
+                                    <td>
+                                        <a href="@Url.Action("Edit", "Product", new { id = product.ProductID })" class="btn btn-warning btn-sm rounded shadow-lg">✏ Edit</a>
+                                        <a href="@Url.Action("Delete", "Product", new { id = product.ProductID })" class="btn btn-danger btn-sm rounded shadow-lg">🗑 Delete</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap CSS (If not already included in layout) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+

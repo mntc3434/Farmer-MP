@@ -1,0 +1,147 @@
+﻿@model Farmer_MP.ViewModel.ShoppingCartViewModel
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Shopping Cart</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f9fc;
+            margin: 0;
+            padding: 0;
+        }
+
+        .shopping-cart {
+            background-color: #ffffff;
+            padding: 30px;
+            margin-top: 50px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h1 {
+            color: #264065;
+            font-size: 32px;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #264065;
+            color: #ffffff;
+        }
+
+        td {
+            font-size: 16px;
+        }
+
+        .total-price {
+            margin-top: 20px;
+            text-align: right;
+            font-size: 20px;
+            font-weight: 600;
+            color: #264065;
+        }
+
+        .btn-primary {
+            background-color: #264065;
+            border: none;
+            padding: 12px 20px;
+            font-size: 16px;
+            font-weight: 600;
+            border-radius: 8px;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-primary:hover {
+            background-color: #4f9f8d;
+        }
+
+        .remove-link {
+            color: #f44336;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .remove-link:hover {
+            text-decoration: underline;
+        }
+
+        .empty-cart {
+            text-align: center;
+            font-size: 18px;
+            color: #999;
+            margin-top: 30px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="shopping-cart">
+        <h1>Your Shopping Cart</h1>
+
+        @if (Model.CartItems.Any())
+        {
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product Name</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total Price</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model.CartItems)
+                    {
+                        <tr>
+                            <td>@item.Product.Name</td>
+                            <td>@item.Product.Price Birr</td>
+                            <td>@item.Quantity</td>
+                            <td>@item.TotalPrice Birr</td>
+                            <td>
+                                <a href="@Url.Action("RemoveFromCart", "Buyer", new { cartId = item.CartID })" class="remove-link">Remove</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+
+            <div class="total-price">
+                <h3>Total: @Model.TotalCartPrice Birr</h3>
+            </div>
+
+            <!-- Checkout Button -->
+            <a href="@Url.Action("Checkout", "Buyer", new { buyerId = Model.CartItems.FirstOrDefault()?.BuyerID })" class="btn btn-primary">Proceed to Checkout</a>
+        }
+        else
+        {
+            <p class="empty-cart">Your shopping cart is empty.</p>
+        }
+    </div>
+
+</body>
+</html>

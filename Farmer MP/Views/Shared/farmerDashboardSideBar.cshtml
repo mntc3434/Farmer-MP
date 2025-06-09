@@ -1,0 +1,26 @@
+﻿@model Farmer_MP.ViewModel.FarmerDashboardViewModel ;
+
+<div class="col-md-3 bg-dark text-white sidebar p-4">
+    <h3 class="text-center mb-4">Farmer Panel</h3>
+    <hr class="text-white" />
+    <ul class="nav flex-column">
+        <li class="nav-item">
+            <a class="nav-link text-white" href="@Url.Action("FarmerDashboard", "Farmers")">🏠 Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" href="@Url.Action("Index", "Product")">📦 Manage Products</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" href="@Url.Action("Notifications", "Farmers")">🔔 Notifications (@Model.NewOrders)</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" href="@Url.Action("Index", "Message")">📩 Messages (@Model.NewMessages)</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" href="@Url.Action("Profile", "Farmers")">👤 Profile</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link text-white" href="@Url.Action("Logout", "Farmers")">🚪 Logout</a>
+        </li>
+    </ul>
+</div>

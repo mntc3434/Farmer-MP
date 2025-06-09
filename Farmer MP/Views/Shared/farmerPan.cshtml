@@ -1,0 +1,132 @@
+﻿@{
+    ViewData["Title"] = "Product Management";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar Menu -->
+        <div class="col-md-3 bg-dark text-white sidebar p-4">
+            <h3 class="text-center mb-4">My Product</h3>
+            <hr class="text-white" />
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="@Url.Action("Index", "Product")">
+                        <i class="fas fa-home"></i> 🏠 Dashboard
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="@Url.Action("Index", "Product")">
+                        <i class="fas fa-list"></i> 📦 Product List
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="@Url.Action("Create", "Product")">
+                        <i class="fas fa-plus"></i> ➕ Add Product
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="@Url.Action("FarmerDashboard", "Farmers")">
+                        <i class="fas fa-cogs"></i> 🏡 Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-white" href="@Url.Action("Logout", "Buyer")">
+                        <i class="fas fa-sign-out-alt"></i> 🚪 Logout
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Main Dashboard Content -->
+        <div class="col-md-9 p-4 content">
+            @RenderBody()
+        </div>
+    </div>
+</div>
+
+<!-- Bootstrap CSS (If not already included in layout) -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+@await RenderSectionAsync("Scripts", required: false)
+<style>
+    /* Custom Styling */
+    .sidebar {
+        position: fixed; /* Make sidebar fixed */
+        top: 0;
+        left: 0;
+        width: 250px; /* Adjust width as needed */
+        height: 100vh; /* Full height of the viewport */
+        background-color: #343a40;
+        color: white;
+        padding: 20px;
+        z-index: 1000; /* Ensure it stays above content */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Make the main content area take the remaining width */
+    .content {
+        margin-left: 260px; /* Offset by the sidebar width */
+        padding-top: 20px;
+    }
+
+    .sidebar h3 {
+        font-size: 26px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    .sidebar .nav-link {
+        color: white;
+        text-decoration: none;
+        padding: 15px;
+        border-radius: 10px;
+        transition: background 0.3s ease;
+    }
+
+        .sidebar .nav-link:hover {
+            background-color: #495057;
+        }
+
+    .card {
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        padding: 20px;
+        transition: transform 0.3s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card h5 {
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+    .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+    }
+
+    .table-bordered th, .table-bordered td {
+        border: 1px solid #dee2e6;
+    }
+
+    .badge {
+        font-size: 14px;
+        padding: 6px 12px;
+        border-radius: 12px;
+    }
+
+    .btn {
+        font-size: 14px;
+        padding: 10px 20px;
+        border-radius: 50px;
+    }
+
+        .btn:hover {
+            opacity: 0.85;
+            transform: scale(1.05);
+        }
+</style>
+
+<!-- Add this line to render Scripts section -->

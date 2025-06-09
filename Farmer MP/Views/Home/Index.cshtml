@@ -1,0 +1,251 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization
+@inject IViewLocalizer Localizer
+
+@{
+    ViewData["Title"] = Localizer["Welcome to Farmer MarketPlace"];
+}
+
+<!DOCTYPE html>
+<html lang="@System.Threading.Thread.CurrentThread.CurrentCulture.Name" dir="@(System.Threading.Thread.CurrentThread.CurrentCulture.TextInfo.IsRightToLeft ? "rtl" : "ltr")">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css">
+    <style>
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+
+        .testimonial-card {
+            max-width: 600px;
+            margin: 0 auto;
+            transition: transform 0.1s ease;
+        }
+
+            .testimonial-card:hover {
+                transform: translateY(-5px);
+            }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-size: 80% 80%;
+        }
+
+        /* RTL adjustments */
+        [dir="rtl"] .carousel-control-prev {
+            right: 0;
+            left: auto;
+        }
+
+        [dir="rtl"] .carousel-control-next {
+            left: 0;
+            right: auto;
+        }
+
+        [dir="rtl"] .text-end {
+            text-align: left !important;
+        }
+
+        [dir="rtl"] .me-auto {
+            margin-left: auto !important;
+            margin-right: 0 !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <partial name="_Navbar" />
+
+    <!-- Hero Section as Image Carousel -->
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="/images/hero1.jpg" class="d-block w-100" alt="Slide 1" style="max-height: 750px; object-fit: cover;">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1 class="display-4 fw-bold" style="color: #2F4F2F;">@Localizer["Fresh & Organic Produce"]</h1>
+                    <p class="lead" style="color: #F5F5DC;">@Localizer["Discover farm-fresh products directly from local farmers."]</p>
+                    <a class="btn btn-success btn-lg" href="@Url.Action("Login", "Account")">@Localizer["Shop Now"]</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/images/hero2.jpg" class="d-block w-100" alt="Slide 2" style="max-height: 750px; object-fit: cover;">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1 class="display-4 fw-bold" style="color: #2F4F2F;">@Localizer["Local Dairy Products"]</h1>
+                    <p class="lead" style="color: #F5F5DC;">@Localizer["High-quality milk, cheese, and more from trusted farms."]</p>
+                    <a class="btn btn-success btn-lg" href="@Url.Action("Login", "Account")">@Localizer["Explore Now"]</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="/images/hero3.png" class="d-block w-100" alt="Slide 3" style="max-height: 750px; object-fit: cover;">
+                <div class="carousel-caption d-none d-md-block">
+                    <h1 class="display-4 fw-bold" style="color: #2F4F2F;">@Localizer["Support Local Farmers"]</h1>
+                    <p class="lead" style="color: #F5F5DC;">@Localizer["Shop sustainably and empower your local community."]</p>
+                    <a class="btn btn-success btn-lg" href="@Url.Action("Login", "Account")">@Localizer["Join Us"]</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+    </div>
+
+    <!-- Featured Products Section -->
+    <section class="container my-5 product-section">
+        <h2 class="text-center text-dark">@Localizer["Featured Products"]</h2>
+        <div class="row mt-4">
+            <div class="col-md-4 d-flex">
+                <div class="card w-100">
+                    <img src="/images/vegetables.jpg" class="card-img-top" alt="@Localizer["Fresh Vegetables"]">
+                    <div class="card-body">
+                        <h5 class="card-title">@Localizer["Fresh Vegetables"]</h5>
+                        <hr />
+                        <p class="card-text">@Localizer["Locally sourced, farm-fresh vegetables."]</p>
+                        <a href="/Products/Details/1" class="btn btn-success" style="color:#C0C0C0">@Localizer["View Details"]</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex">
+                <div class="card w-100">
+                    <img src="/images/Fruit.jpg" class="card-img-top" alt="@Localizer["Organic Fruits"]">
+                    <div class="card-body">
+                        <h5 class="card-title">@Localizer["Organic Fruits"]</h5>
+                        <hr />
+                        <p class="card-text">@Localizer["Delicious and naturally grown fruits."]</p>
+                        <a href="/Products/Details/2" class="btn btn-success" style="color:#C0C0C0">@Localizer["View Details"]</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 d-flex">
+                <div class="card w-100">
+                    <img src="/images/dairy.jpg" class="card-img-top" alt="@Localizer["Dairy Products"]">
+                    <div class="card-body">
+                        <h5 class="card-title">@Localizer["Dairy Products"]</h5>
+                        <hr />
+                        <p class="card-text">@Localizer["Fresh milk, cheese, and more."]</p>
+                        <a href="/Products/Details/3" class="btn btn-success" style="color:#C0C0C0">@Localizer["View Details"]</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonial-section py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center text-dark mb-4">@Localizer["What Our Customers Say"]</h2>
+
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner text-center">
+
+                    <div class="carousel-item active">
+                        <div class="d-flex justify-content-center">
+                            <div class="testimonial-card p-4 shadow-sm bg-white rounded text-center" style="max-width: 600px; width: 100%;">
+                                <p class="mb-3">@Localizer["\"I love the quality of the fresh vegetables! Fast delivery and great service!\""]</p>
+                                <h5 class="mb-0 text-success">Minte Getu</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="testimonial-card p-4 shadow-sm bg-white rounded text-center" style="max-width: 600px; width: 100%;">
+                                <p class="mb-3">@Localizer["\"The organic fruits are amazing. Definitely will order again!\""]</p>
+                                <h5 class="mb-0 text-success">Jane Smith</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="carousel-item">
+                        <div class="d-flex justify-content-center">
+                            <div class="testimonial-card p-4 shadow-sm bg-white rounded text-center" style="max-width: 600px; width: 100%;">
+                                <p class="mb-3">@Localizer["\"Fantastic experience, and the dairy products are top-notch!\""]</p>
+                                <h5 class="mb-0 text-success">Mark Lee</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                    <span class="visually-hidden">@Localizer["Previous"]</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon bg-dark rounded-circle p-2" aria-hidden="true"></span>
+                    <span class="visually-hidden">@Localizer["Next"]</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-dark text-white py-5">
+        <div class="container">
+            <div class="row">
+                <!-- About Section -->
+                <div class="col-md-4">
+                    <h5>@Localizer["About Farmer's Market"]</h5>
+                    <p>@Localizer["We connect farmers directly to customers, ensuring fresh and organic produce reaches your table."]</p>
+                </div>
+
+                <!-- Quick Links -->
+                <div class="col-md-2">
+                    <h5>@Localizer["Company"]</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="@Url.Action("About", "Home")" class="text-white">@Localizer["About Us"]</a></li>
+                        <li><a href="#" class="text-white">@Localizer["Careers"]</a></li>
+                        <li><a href="#" class="text-white">@Localizer["Policies"]</a></li>
+                        <li><a href="#" class="text-white">@Localizer["Testimonials"]</a></li>
+                    </ul>
+                </div>
+
+                <!-- Help & Support -->
+                <div class="col-md-2">
+                    <h5>@Localizer["Support"]</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="#" class="text-white">@Localizer["FAQs"]</a></li>
+                        <li><a href="#" class="text-white">@Localizer["Help Center"]</a></li>
+                        <li><a href="#" class="text-white">@Localizer["Return Policy"]</a></li>
+                        <li><a href="#" class="text-white">@Localizer["Privacy Policy"]</a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Section -->
+                <div class="col-md-4">
+                    <h5>@Localizer["Contact Us"]</h5>
+                    <p>@Localizer["Email:"] mgetu6661@gmail.com</p>
+                    <p>@Localizer["Phone:"] +251962798155</p>
+                    <p>@Localizer["Address:"] Farm Lane, Ziway, Ethiopia</p>
+                    <h6>@Localizer["Stay Updated"]</h6>
+                    <input type="email" class="form-control" placeholder="@Localizer["Enter your email"]">
+                    <button class="btn btn-success mt-2">@Localizer["Subscribe"]</button>
+                </div>
+            </div>
+            <hr class="mt-4">
+            <p class="text-center">&copy; 2025 @Localizer["Farmer's Market"] | @Localizer["All Rights Reserved"]</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

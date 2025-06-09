@@ -1,0 +1,154 @@
+﻿@model Farmer_MP.ViewModels.NearbyFarmersViewModel
+@using Newtonsoft.Json
+
+@{
+    ViewData["Title"] = "Nearby Farmers";
+    var farmerCoordsJson = JsonConvert.SerializeObject(Model.FarmersCoordinates ?? new List<Farmer_MP.ViewModels.FarmerCoordinates>());
+}
+<head>
+    <style>
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+
+        .nerby {
+            padding-top: 90px; /* Adjust based on your navbar height */
+        }
+    </style>
+</head>
+<partial name="_Navbar" />
+<!-- Add Leaflet CSS -->
+<link href="https://unpkg.com/leaflet/dist/leaflet.css" rel="stylesheet" />
+
+<!-- Include Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+<body class="nerby">
+<div class="container py-4">
+    <h2 class="text-center mb-4">🌾 Find Nearby Farmers & Products</h2>
+
+    <form class="input-group mb-5 shadow-sm" method="get" asp-action="NearbyFarmersWithProducts">
+        <input type="text" class="form-control form-control-lg rounded-start" name="searchLocation" placeholder="Enter your location (e.g., Addis Ababa)" required />
+        <button class="btn btn-success btn-lg rounded-end" type="submit">🔍 Search</button>
+    </form>
+
+    <div class="mb-5">
+        @if (Model.FarmersCoordinates != null && Model.FarmersCoordinates.Any())
+        {
+            <div id="map" class="rounded shadow-sm" style="height: 400px;"></div>
+
+            <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+            <script>
+                function initMap() {
+                    const farmers = @Html.Raw(farmerCoordsJson);
+                    const defaultCenter = farmers.length > 0
+                        ? [farmers[0].Lat, farmers[0].Lng]
+                        : [9.03, 38.74]; // Default to Addis Ababa
+
+                    // Initialize the Leaflet map
+                    const map = L.map('map').setView(defaultCenter, 10);
+
+                    // Add OpenStreetMap tiles (free and open)
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    }).addTo(map);
+
+                    // Loop through farmers and add markers to the map
+                    farmers.forEach(farmer => {
+                        const marker = L.marker([farmer.Lat, farmer.Lng]).addTo(map);
+                        marker.bindPopup("<b>" + farmer.Name + "</b><br>" + farmer.Address);
+
+                        marker.on('click', function () {
+                            const el = document.getElementById('products-section-' + farmer.UserID);
+                            if (el) el.scrollIntoView({ behavior: 'smooth' });
+                        });
+                    });
+                }
+
+                // Call initMap() when the page loads
+                initMap();
+            </script>
+        }
+        else
+        {
+            <div class="text-center border rounded p-3 shadow-sm bg-light">
+                <iframe width="100%"
+                        height="300"
+                        frameborder="0"
+                        style="border:0; border-radius: 8px;"
+                        src="https://www.openstreetmap.org/export/embed.html?bbox=38.7%2C9.0%2C39.0%2C9.2&layer=mapnik"
+                        allowfullscreen>
+                </iframe>
+                <p class="mt-3 text-muted">No farmer locations found. Showing map placeholder.</p>
+            </div>
+        }
+
+    </div>
+
+    @if (Model.ProductsByFarmer != null && Model.ProductsByFarmer.Any())
+    {
+        <div class="accordion" id="farmersAccordion">
+            @foreach (var group in Model.ProductsByFarmer)
+            {
+                var farmer = Model.Farmers.FirstOrDefault(f => f.UserID == group.Key);
+                if (farmer == null) { continue; }
+
+                <div class="accordion-item mb-3 shadow-sm">
+                    <h2 class="accordion-header" id="heading-@group.Key">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-@group.Key" aria-expanded="false" aria-controls="collapse-@group.Key">
+                            👨‍🌾 @farmer.Name — <small class="text-muted ms-2">@farmer.Address</small>
+                        </button>
+                    </h2>
+                    <div id="collapse-@group.Key" class="accordion-collapse collapse" aria-labelledby="heading-@group.Key" data-bs-parent="#farmersAccordion">
+                        <div class="accordion-body" id="products-section-@group.Key">
+                            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                                @foreach (var product in group.Value)
+                                {
+                                    <div class="col">
+
+                                        <a href="@Url.Action("Details", "Home", new { id = product.ProductID })" class="text-decoration-none text-dark">
+                                            <div class="card h-100 shadow-sm border-0 hover-shadow" style="transition: transform 0.2s;">
+                                                @if (product.Images?.Any() == true)
+                                                {
+                                                    <img src="@product.Images.First().ImageUrl" class="card-img-top" alt="@product.Name" style="object-fit: cover; height: 180px;" />
+                                                }
+                                                <div class="card-body">
+                                                    <h5 class="card-title">@product.Name</h5>
+                                                    <p class="card-text text-muted">@product.Description</p>
+                                                    <p class="mb-1"><strong>💰 Price:</strong> $@product.Price</p>
+                                                    <p class="mb-0"><strong>📦 Category:</strong> @product.Category</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else if (!string.IsNullOrEmpty(Model.SearchLocation))
+    {
+        <div class="alert alert-warning text-center mt-4">
+            <strong>No farmers found near:</strong> "@Model.SearchLocation"
+        </div>
+    }
+</div>
+
+<style>
+    .card:hover {
+        transform: scale(1.02);
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+</style>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

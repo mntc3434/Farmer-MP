@@ -1,0 +1,103 @@
+﻿@model List<Farmer_MP.Models.ShoppingCart>
+
+@{
+    ViewData["Title"] = "Shopping Cart";
+    var products = ViewBag.Products as List<Farmer_MP.Models.Product>; // ✅ Explicitly cast ViewBag.Products
+}
+<head>
+    <link rel="stylesheet" href="~/css/cart.css" asp-append-version="true" />
+    <style>
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            background-color: white;
+            border: 1px solid #ddd;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-item:hover .dropdown-menu {
+            display: block;
+        }
+
+        .cartbody {
+            padding-top: 90px; /* Adjust based on your navbar height */
+        }
+    </style>
+</head>
+<partial name="_Navbar" />
+<body class="cartbody">
+<div class="container my-5">
+    <!-- Card container -->
+    <div class="card shadow-lg cart-card">
+        <div class="card-body">
+            <h2 class="text-center mb-4 text-primary">🛒 Your Shopping Cart</h2>
+
+            @if (Model == null || !Model.Any())
+            {
+                <div class="alert alert-info text-center">
+                    <p>Your cart is empty. Start adding products!</p>
+                    <a href="@Url.Action("ProductList", "Home")" class="btn btn-primary mt-2">Browse Products</a>
+                </div>
+            }
+            else
+            {
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead class="table-dark">
+                            <tr>
+                                <th>Product</th>
+                                <th>Image</th>
+                                <th>Buyer</th>
+                                <th>Quantity</th>
+                                <th>Price</th>
+                                <th>Total</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        @if (products != null)
+                        {
+                            @foreach (var product in products)
+                            {
+                                <tr>
+                                    <td>@product.Name</td>
+                                    <td>
+                                        @if (product.Images != null && product.Images.Count > 0)
+                                        {
+                                            <img src="@product.Images.FirstOrDefault()?.ImageUrl" alt="Product Image" class="product-image" />
+                                        }
+                                        else
+                                        {
+                                            <img src="/images/placeholder.png" alt="No Image Available" class="product-image" />
+                                        }
+                                    </td>
+                                    <td>@(product.Farmer != null ? product.Farmer.Name : "Unknown")</td>
+                                    <td>@Model.FirstOrDefault(c => c.ProductID == product.ProductID)?.Quantity</td>
+                                    <td>@product.Price Birr</td>
+                                    <td>
+                                        $@((product.Price * Model.FirstOrDefault(c => c.ProductID == product.ProductID)?.Quantity) ?? 0)
+                                    </td>
+                                    <td>
+                                        <form asp-action="RemoveFromCart" asp-controller="Home" method="post">
+                                            <input type="hidden" name="cartId" value="@Model.FirstOrDefault(c => c.ProductID == product.ProductID)?.CartID" />
+                                            <button type="submit" class="btn btn-danger btn-sm remove-btn">Remove</button>
+                                        </form>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="text-end mt-3">
+                    <h4>Total: <strong>@(Model.Sum(item => item.Product.Price * item.Quantity)) Birr</strong></h4>
+                        <form asp-action="ProcessPayment" asp-controller="Payment" method="post">
+                            <button type="submit" class="btn btn-success btn-lg mt-2">Proceed to Checkout</button>
+                        </form>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+</body>

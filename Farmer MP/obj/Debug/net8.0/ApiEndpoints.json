@@ -1,0 +1,34 @@
+[
+  {
+    "ContainingType": "Farmer_MP.Controllers.Api.AccountApiController",
+    "Method": "Login",
+    "RelativePath": "api/AccountApi/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Farmer_MP.ViewModel.LoginViewModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Farmer_MP.Controllers.Api.AccountApiController",
+    "Method": "Register",
+    "RelativePath": "api/AccountApi/register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "model",
+        "Type": "Farmer_MP.ViewModel.RegisterViewModel",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]

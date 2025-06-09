@@ -1,0 +1,76 @@
+﻿/* Custom Styling */
+.sidebar {
+    height: 100vh;
+    background-color: #343a40;
+    color: white;
+    padding: 20px;
+}
+.sidebar {
+    position: -webkit-sticky; /* For Safari */
+    position: sticky;
+    top: 0; /* Keeps the sidebar fixed at the top */
+    height: 100vh; /* Ensures it takes the full height of the viewport */
+    overflow-y: auto; /* Allows scrolling if content overflows */
+    z-index: 10; /* Ensures it's above other content */
+}
+
+
+    .sidebar h3 {
+        font-size: 26px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+
+    .sidebar .nav-link {
+        color: white;
+        text-decoration: none;
+        padding: 15px;
+        border-radius: 10px;
+        transition: background 0.3s ease;
+    }
+
+        .sidebar .nav-link:hover {
+            background-color: #495057;
+        }
+
+.card {
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    padding: 20px;
+    transition: transform 0.3s ease;
+}
+
+    .card:hover {
+        transform: translateY(-5px);
+    }
+
+    .card h5 {
+        font-weight: bold;
+        font-size: 18px;
+    }
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f9f9f9;
+}
+
+.table-bordered th, .table-bordered td {
+    border: 1px solid #dee2e6;
+}
+
+.badge {
+    font-size: 14px;
+    padding: 6px 12px;
+    border-radius: 12px;
+}
+
+.btn {
+    font-size: 14px;
+    padding: 10px 20px;
+    border-radius: 50px;
+}
+
+    .btn:hover {
+        opacity: 0.85;
+        transform: scale(1.05);
+    }
