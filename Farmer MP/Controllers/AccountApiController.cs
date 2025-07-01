@@ -1,4 +1,4 @@
-..﻿using Farmer_MP.Data;
+using Farmer_MP.Data;
 using Farmer_MP.Models;
 using Farmer_MP.ViewModel;
 using Microsoft.AspNetCore.Mvc;
