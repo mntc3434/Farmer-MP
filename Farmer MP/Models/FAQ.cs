@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
-
+....
 namespace Farmer_MP.Models
 {
     public class FAQ
