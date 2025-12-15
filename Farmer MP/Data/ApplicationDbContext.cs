@@ -2,7 +2,7 @@
 
 using Microsoft.EntityFrameworkCore;
 namespace Farmer_MP.Data
-{..
+{.
     public class ApplicationDbContext : DbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext>
